@@ -1153,4 +1153,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/save.inc"
 	.include "data/text/birch_speech.inc"
 
-	.include "data/maps/TESTGiardinoAlice/scripts.inc"
+	.include "data/maps/TEST_GIARDINO_ALICE/scripts.inc"

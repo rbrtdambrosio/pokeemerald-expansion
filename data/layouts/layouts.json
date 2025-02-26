@@ -4413,13 +4413,13 @@
     },
     {
       "id": "LAYOUT_TESTGIARDINO_ALICE",
-      "name": "TESTGiardinoAlice_Layout",
+      "name": "TEST_GIARDINO_ALICE_Layout",
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
-      "border_filepath": "data/layouts/TESTGiardinoAlice/border.bin",
-      "blockdata_filepath": "data/layouts/TESTGiardinoAlice/map.bin"
+      "border_filepath": "data/layouts/TEST_GIARDINO_ALICE/border.bin",
+      "blockdata_filepath": "data/layouts/TEST_GIARDINO_ALICE/map.bin"
     }
   ]
 }
