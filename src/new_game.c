@@ -45,6 +45,8 @@
 #include "mystery_gift.h"
 #include "union_room_chat.h"
 #include "constants/items.h"
+ 
+ 
 
 extern const u8 EventScript_ResetAllMapFlags[];
 
@@ -84,8 +86,8 @@ void CopyTrainerId(u8 *dst, u8 *src)
 
 static void InitPlayerTrainerId(void)
 {
-    u32 trainerId = (Random() << 16) | GetGeneratedTrainerIdLower();
-    SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId);
+     u32 trainerId = (Random() << 16) | GetGeneratedTrainerIdLower();
+     SetTrainerId(trainerId, gSaveBlock2Ptr->playerTrainerId); 
 }
 
 // L=A isnt set here for some reason.
@@ -127,7 +129,7 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    SetWarpDestination(MAP_GROUP(OLDALE_TOWN), MAP_NUM(OLDALE_TOWN), -1, 6, 18);
+    SetWarpDestination(MAP_GROUP(STANZA_ALICE), MAP_NUM(STANZA_ALICE), -1, 3, 4);
     WarpIntoMap();
 }
 
@@ -205,7 +207,7 @@ void NewGameInitData(void)
     WipeTrainerNameRecords();
     ResetTrainerHillResults();
     ResetContestLinkResults();
-    ResetItemFlags();
+    ResetItemFlags(); 
 }
 
 static void ResetMiniGamesRecords(void)

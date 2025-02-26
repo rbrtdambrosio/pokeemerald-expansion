@@ -1154,3 +1154,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/TEST_GIARDINO_ALICE/scripts.inc"
+
+	.include "data/maps/StanzaAlice/scripts.inc"
+
+	.include "data/maps/SaloneeCucina/scripts.inc"

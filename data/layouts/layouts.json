@@ -4417,9 +4417,29 @@
       "width": 20,
       "height": 20,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Petalburg",
+      "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/TEST_GIARDINO_ALICE/border.bin",
       "blockdata_filepath": "data/layouts/TEST_GIARDINO_ALICE/map.bin"
+    },
+    {
+      "id": "LAYOUT_STANZA_ALICE",
+      "name": "StanzaAlice_Layout",
+      "width": 8,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/StanzaAlice/border.bin",
+      "blockdata_filepath": "data/layouts/StanzaAlice/map.bin"
+    },
+    {
+      "id": "LAYOUT_SALONEE_CUCINA",
+      "name": "SaloneeCucina_Layout",
+      "width": 20,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SaloneeCucina/border.bin",
+      "blockdata_filepath": "data/layouts/SaloneeCucina/map.bin"
     }
   ]
 }

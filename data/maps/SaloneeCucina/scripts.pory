@@ -1,0 +1,55 @@
+mapscripts SaloneeCucina_MapScripts {}
+ 
+
+script SaloneeCucina_EventScript_NeedPokemonTriggerLeft{
+    lockall
+	waitmovement(0)
+	msgbox(Testo_per_uscire, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER, SaloneeCucina_Movement_PushPlayerBackFromDoor)
+	waitmovement(0)
+	releaseall
+}
+
+
+movement SaloneeCucina_Movement_PushPlayerBackFromDoor {
+    walk_up
+	face_left
+}
+
+text Testo_per_uscire{
+    format("MOM: Aliiiiceeee?! Dove vai? Vieni qui un momento!")
+}
+	 
+
+script SaloneeCucina_EventScript_Paola{
+    msgbox(Paola_text, MSGBOX_NPC)
+}
+
+text Paola_text{
+   format("MOM: {PLAYER}! {PLAYER}! Visto che stai sennza fare nulla\p"
+   "Puoi portare uno dei cani a fare una passeggiata?")
+}
+ 
+script SaloneeCucina_EventScript_InteragisciMilla {
+	lockall
+    showmonpic(SPECIES_POOCHYENA,10,3)
+	msgbox(format("Porti Milla fuori per una passeggiata?"), MSGBOX_YESNO)
+        if (var(VAR_RESULT) != 1) {
+             msgbox("The Cerulean Gym's doors don't\n"
+               "open until morning.")
+             
+        }elif (var(VAR_RESULT) == 1) {
+             msgbox("La risposta e' 1")
+             givemon(SPECIES_POOCHYENA,50,ITEM_MASTER_BALL)
+             msgbox("Hai ricevuto Milla")
+             removeobject(2)
+             setflag(FLAG_UNUSED_0x493)
+             setflag(FLAG_SYS_POKEMON_GET)
+             
+        }
+    hidemonpic
+    waitmessage
+	releaseall
+	end
+}

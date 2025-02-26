@@ -1,15 +1,15 @@
 {
-  "id": "MAP_TEST_GIARDINO_ALICE",
-  "name": "TEST_GIARDINO_ALICE",
-  "layout": "LAYOUT_TESTGIARDINO_ALICE",
+  "id": "MAP_STANZA_ALICE",
+  "name": "StanzaAlice",
+  "layout": "LAYOUT_STANZA_ALICE",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_TEST_GIARDINO_ALICE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_TOWN",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": true,
+  "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
@@ -18,24 +18,24 @@
   ],
   "warp_events": [
     {
-      "x": 11,
-      "y": 6,
+      "x": 4,
+      "y": 7,
       "elevation": 0,
       "dest_map": "MAP_SALONEE_CUCINA",
-      "dest_warp_id": "2"
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 7,
+      "elevation": 0,
+      "dest_map": "MAP_SALONEE_CUCINA",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
 
   ],
   "bg_events": [
-    {
-      "type": "sign",
-      "x": 14,
-      "y": 17,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "LittlerootTown_EventScript_BrendansHouseSign"
-    }
+
   ]
 }
