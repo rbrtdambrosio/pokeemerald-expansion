@@ -1,0 +1,131 @@
+mapscripts TEST_GIARDINO_ALICE_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopup
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+MAP_SCRIPT_ON_RESUME: Script_MaxLv8 
+}
+script Script_MaxLv5{
+setvar(VAR_MAX_AREA_LEVEL,5)
+}
+script Script_MaxLv8{
+setvar(VAR_MAX_AREA_LEVEL,8)
+}
+ 
+script Script_MaxLv10{
+setvar(VAR_MAX_AREA_LEVEL,10)
+}
+script Script_MaxLv12{
+setvar(VAR_MAX_AREA_LEVEL,12)
+}
+ 
+script Script_MaxLv15{
+setvar(VAR_MAX_AREA_LEVEL,15)
+}
+script Script_MaxLv17{
+setvar(VAR_MAX_AREA_LEVEL,17)
+}
+script Script_MaxLv20{
+setvar(VAR_MAX_AREA_LEVEL,20)
+}
+
+script Script_MaxLv25{
+setvar(VAR_MAX_AREA_LEVEL,25)
+}
+
+//script GiveBackPokeball{
+	//if (var(VAR_NUM_POKEBALL)< PARTY_SIZE-1){
+	//	giveitem(ITEM_POKE_BALL)
+	//}
+	
+//}	
+ 
+
+script GiardinoAlice_EventScript_DonatoSign {
+	msgbox(format("Tip 2: DONATO ti puo' aiutare a liberarti dei pokemon che non vuoi piu'"))
+	closemessage
+}
+script GiardinoAlice_EventScript_AliceHouseSign {
+	msgbox(format(" CASA MELE \p Tip 1: Se sei a corto di pozioni, parla con i tuoi amici ed i membri della tua famiglia"))
+	closemessage
+}
+
+script TEST_GIARDINO_ALICE_Donato{
+lockall
+	specialvar(VAR_RESULT,CalculatePlayerPartyCount) 
+	if(var(VAR_RESULT)>1){ 
+		call(cancelpokemonservice)
+		
+	}else{
+		if (var(VAR_DONATO)==0){
+		msgbox(Donato_text, MSGBOX_NPC)
+		setvar(VAR_DONATO,1)
+		}elif(var(VAR_DONATO)==1){
+	msgbox(Donato_text2, MSGBOX_NPC)
+			setvar(VAR_DONATO,2)
+		}elif(var(VAR_DONATO)==2){
+	msgbox(Donato_text1, MSGBOX_NPC)
+			setvar(VAR_DONATO,3)
+		}elif(var(VAR_DONATO)==3){
+	msgbox(Donato_text3, MSGBOX_NPC)
+			setvar(VAR_DONATO,1)
+	}
+	closemessage
+}
+release
+}
+
+script cancelpokemonservice{
+	lockall
+ 		msgbox(Donato_text_cancella_pkm, MSGBOX_YESNO)
+		 if (var(VAR_RESULT) != 1) {
+                msgbox(format("DONATO:Ok, torno ad allenarmi"))
+			
+                
+            }elif (var(VAR_RESULT) == 1) {
+				msgbox(format("DONATO:Seleziona il tuo pkm"))
+				special(ChoosePartyMon)
+				waitstate
+				special(ChoosePartyMon)
+				waitstate
+				if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
+    				 
+					msgbox( format("DONATO: Ok sara' per la prossima volta"))
+				}
+				else{
+    				special(DeleteChosenPartyMon)
+					msgbox(format("DONATO: Il tuo pokemon e' tormato libero"))
+					msgbox(format("DONATO: eccoti anche la pokeball in cui si trovava"))
+					giveitem(ITEM_POKE_BALL)
+				}
+
+			}
+		releaseall
+}
+ 
+
+text Donato_text_cancella_pkm{
+  format("DONATO: Ciao {PLAYER}! Vuoi liberarti di qualche pkm?")
+}
+
+text Donato_text{ 
+        format("DONATO: Ciao {PLAYER}! Uno, due, Uno, due. Mi sto allenando!
+		Devo essere in forma!")
+	}
+text Donato_text1{ 
+        format("DONATO: Ho quasi fatto, un'altra mezz'ora poi mi vado a fare due arrosticini con Emanuele")	
+	}	
+text Donato_text2{ 
+        format("DONATO: Stai andando da Mavi e Sami? Ho sentito che sono diventate molto forti, Secondo me ti devi allenare un po'!")
+	}		
+ text Donato_text3{ 
+        format("DONATO: Non puoi prendere la superstrada senza bicicletta, prova a passare dal lato del lago; Stai attenta ai cinghiali!!!!!!")
+	}	
+
+script LittlerootTown_EventScript_AliceHouseSign{
+	msgbox(Testo_CartelloAlice, MSGBOX_DEFAULT)
+}
+
+text Testo_CartelloAlice{
+	 
+    format("Casa MELE")
+		 
+}

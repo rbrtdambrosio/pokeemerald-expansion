@@ -217,7 +217,8 @@
 #define MAPSEC_TEST_GIARDINO_ALICE          0xD5
 #define MAPSEC_STANZA_ALICE                 0xD6
 #define MAPSEC_SALONE_CUCINA                0xD7
-#define MAPSEC_NONE                         0xD8
+#define MAPSEC_VIA_FRANCIGENA_MIDDLE        0xD8
+#define MAPSEC_NONE                         0xD9
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

@@ -1,0 +1,88 @@
+mapscripts CampoGizzi_CasaMavi_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupUpCampoG
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF
+MAP_SCRIPT_ON_RESUME: Script_MaxLv25
+
+}
+script 	HideMapNamePopupUpCampoG{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+ 
+script MechanicGym_Sign {
+	msgbox(format("MACHANIC GYM \p""Vi ripariamo le macchine e vi facciamo un culo cosi' con i pokemon\p""Warning: la DLC gym non e' ancora disponibile"),MSGBOX_DEFAULT)
+
+}
+ 
+
+ script CampoGizzi_CasaMaviEventScript_Mirtilli{
+    lockall
+    specialvar(VAR_RESULT,CheckPartyFullHealed)
+    if(var(VAR_RESULT)){
+        msgbox(format("Oh una pianta di mirtilli, fa miracoli!"))
+     }elif(!var(VAR_RESULT)){
+        msgbox(format("Mirtilli selvatici! Non c'e' nulla di meglio per curare tutti i mali"))
+         msgbox("I tuoi Pokemon sono guariti")
+        special(HealPlayerParty)
+        setrespawn(HEAL_LOCATION_CampoGizzi_Mirtilli)
+   }
+   	releaseall
+
+}
+ 
+	
+
+ 
+script CampoGizzi_EventScript_Mattia{
+
+	trainerbattle_single(TRAINER_DAWSON, Battle_Text_Mattia,after_Battle_Text_Mattia)
+	msgbox(format("MATTIA: Mavi ti sta aspettando dentro, stai attenta, e' molto piu' forte di me!"), MSGBOX_NPC)
+	closemessage
+
+	
+}
+text 	Battle_Text_Mattia{
+format("MATTIA: BWHAHWAHAHWAHA affronta il miglior neurochirurgo di campo Gizzi! ")
+
+}
+text after_Battle_Text_Mattia{
+format("MATTIA: BAHWHAWHAHWHA - ho perso! ")
+	
+}
+
+script  CampoGizzi_EventScript_Emanuele{
+msgbox(format("EMANUELE: L'aria di campo Gizzi e' fantastica."), MSGBOX_NPC)
+closemessage
+call(ViaFrancEast_EventScript_postBattle)
+	
+}
+
+script CampoGizzi_Donato{
+	lockall
+	specialvar(VAR_RESULT,CalculatePlayerPartyCount) 
+	if(var(VAR_RESULT)>1){ 
+		call(cancelpokemonservice)
+		
+	}
+	msgbox(format("DONATO: Chissa se qui a campo gizzi fanno gli arrosticini"), MSGBOX_NPC)
+	closemessage
+
+}
+
+
+script CampoGizzi_EventScript_Vez{
+
+	trainerbattle_single(TRAINER_KALEB, Battle_Text_Mattia,after_Battle_Text_Mattia)
+	msgbox(format("Vez: Uff Oggi ho fatto solo il giro del mondo 1 volta... meglio impegnarsi di piu'"), MSGBOX_NPC)
+	closemessage
+
+	
+}
+text 	Battle_Text_Vez{
+format("VEZ: Bella vez; soc ma bell! ")
+
+}
+text after_Battle_Text_Vez{
+format("VEZ: NNNNOOOOO soc ma bell! ")
+	
+}

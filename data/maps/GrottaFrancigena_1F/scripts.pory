@@ -1,0 +1,22 @@
+mapscripts GrottaFrancigena_1F_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopup 
+MAP_SCRIPT_ON_RESUME: Script_MaxLv15
+ 
+
+}
+ 
+ 
+script GrottaFrancigena_event_pokeball{
+	lockall
+ 
+		giveitem(ITEM_POKE_BALL) 
+		removeobject(1)
+	 setflag(FLAG_pokeballgrotta)
+	 	addvar(VAR_NUM_POKEBALL,1)
+ 
+ 
+   releaseall
+}
+
+ 

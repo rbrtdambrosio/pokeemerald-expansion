@@ -1,0 +1,28 @@
+mapscripts Lago_Wild_Area_Bike_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNameLagobike
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+
+}
+script 	HideMapNameLagobike{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+script Lago_Wild_Area_Bike_Store_EventScript_OldMan{
+		   if(checkitem(ITEM_BIKE_VOUCHER)){
+			msgbox(format("VECCHIO SCORBUTICO: Ahhh sei un'amica di Ciro. Bene Bene, prendi questa bici e togliti dalle palle. "), MSGBOX_NPC)
+	closemessage
+	giveitem(ITEM_ACRO_BIKE)
+	   }else{
+	msgbox(format("VECCHIO SCORBUTICO: Oggi e' ghiornata. Prima quell'arabo mo chiss. Togliti dalle palle "), MSGBOX_NPC)
+	closemessage
+	   }
+
+
+}
+
+script Lago_Wild_Area_Bike_Store_EventScript_Pikachu{
+
+	msgbox(format("Pikachu: Pika e togliti dalle palle. "), MSGBOX_NPC)
+	closemessage
+
+}

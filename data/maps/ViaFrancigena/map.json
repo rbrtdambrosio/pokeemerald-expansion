@@ -1,0 +1,107 @@
+{
+  "id": "MAP_VIA_FRANCIGENA",
+  "name": "ViaFrancigena",
+  "layout": "LAYOUT_VIA_FRANCIGENA",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_VIA_FRANCIGENA_MIDDLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_TEMP_CASA_ALICE",
+      "offset": 33,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 81,
+      "y": 1,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancEast_EventScript_zio_pescatore",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 50,
+      "y": 27,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancEast_EventScript_esche_zio",
+      "flag": "FLAG_esche_zio"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "x": 33,
+      "y": 6,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "NULL",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 53,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_TEST_GIARDINO_ALICE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 54,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_TEST_GIARDINO_ALICE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_INCONTRO_EMANUELE",
+      "var_value": "0",
+      "script": "ViaFrancEast_EventScript_incontro_emanuele_down"
+    },
+    {
+      "type": "trigger",
+      "x": 40,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_INCONTRO_EMANUELE",
+      "var_value": "0",
+      "script": "ViaFrancEast_EventScript_incontro_emanuele_up"
+    }
+  ],
+  "bg_events": [
+
+  ]
+}

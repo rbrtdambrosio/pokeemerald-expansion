@@ -34,7 +34,10 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_CasaAlice"
+    "gMapGroup_CasaAlice",
+    "gMapGroup_ViaFrancigena",
+    "gMapGroup_GrottaFrancigena",
+    "gMapGroup_CampoGizzi"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -625,6 +628,34 @@
   ],
   "gMapGroup_CasaAlice": [
     "StanzaAlice",
-    "SaloneeCucina"
+    "SaloneeCucina",
+    "TempCasaAlice",
+    "TempViaFrancigena"
+  ],
+  "gMapGroup_ViaFrancigena": [
+    "ViaFrancigena",
+    "ViaFrancigenaLago",
+    "TempViaFrancigena30",
+    "ViaFrancigenaLagoNord",
+    "ViaFrancigenaLagoSUD",
+    "ViaFrancigenaMiddleSUD",
+    "ViaFrancigenaMiddleNORD",
+    "ViaFrancigenaUpHills",
+    "Indoor_Vecchio_Piromane",
+    "Autostrada",
+    "Lago_Wild_Area",
+    "Lago_Wild_Area_Bike"
+  ],
+  "gMapGroup_GrottaFrancigena": [
+    "GrottaFrancigena_1F",
+    "GrottaFrancigena_2F",
+    "Grotta_Francigena_Last_Floor"
+  ],
+  "gMapGroup_CampoGizzi": [
+    "CampoGizzi_CasaMavi",
+    "CampoGizzi_Mavi_Inddor",
+    "CampoGizzyMaviGym",
+    "CampoGizzi_Casa_Sami",
+    "CampoGizziSamigym"
   ]
 }

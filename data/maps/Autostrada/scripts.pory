@@ -1,0 +1,170 @@
+mapscripts Autostrada_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNameIndoor_Autostr
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+MAP_SCRIPT_ON_RESUME: Script_MaxLv25
+
+}
+script 	HideMapNameIndoor_Autostr{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+script DLC_carnello{
+	msgbox(format("La DLC Carnjl non e' ancora disponibile. Non ti posso lasciar passare"), MSGBOX_NPC)
+	closemessage
+}
+
+
+
+script GuardiaForestale_bikeroad{
+ 
+ 
+ msgbox(format("Puoi salire sulla pista ciclabile solo se hai una bicicletta!!!!!"),MSGBOX_NPC)
+  closemessage
+}
+
+script temp_trigger {
+    msgbox(format("triggering temp_trigger"),MSGBOX_DEFAULT)
+
+    if(flag(FLAG_SYS_CYCLING_ROAD)){
+         msgbox(format("FLAG_SYS_CYCLING_ROAD is TRUE. non si puo scendere dalla bici: setto la flag a FALSE"),MSGBOX_DEFAULT)
+        clearflag(FLAG_SYS_CYCLING_ROAD)
+        applymovement(OBJ_EVENT_ID_PLAYER,script_mov_cycledown)
+
+    }elif(flag(FLAG_SYS_CYCLING_ROAD)==FALSE){
+         msgbox(format("FLAG_SYS_CYCLING_ROAD is FALSE, controllo il player"),MSGBOX_DEFAULT)
+        specialvar(VAR_RESULT, GetPlayerAvatarBike)
+        if (var(VAR_RESULT)==0){
+            msgbox(format("Fplayer non sulla bici"),MSGBOX_DEFAULT)
+            call(Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike)
+        }elif(var(VAR_RESULT)==1){
+               msgbox(format("Player  sulla bici setting FLAG_SYS_CYCLING_ROAD to true "),MSGBOX_DEFAULT)
+               setflag(FLAG_SYS_CYCLING_ROAD)
+               applymovement(OBJ_EVENT_ID_PLAYER,script_mov_cycleup)
+        }
+    }
+    closemessage
+ 
+}
+movement script_mov_cycleup{
+	walk_up 
+}
+
+movement script_mov_cycledown{
+	walk_down
+}
+
+
+
+ 
+script Autostrada_EventScript_CyclingGirl1{
+    
+      msgbox(format("LUCA C.: Ciao Alice, ti piace la mia nuova BMW bike super costosa e super sgargiante? Broom Broom!"), MSGBOX_NPC)
+	closemessage
+
+}
+
+script Autostrada_EventScript_Abigail{
+    
+	trainerbattle_single(TRAINER_ABIGAIL_1, Battle_Text_Abigail,after_Text_Abigail)
+	msgbox(format("Broom Broom, togliti dalla strada."), MSGBOX_NPC)
+	closemessage
+
+	
+}
+text Battle_Text_Abigail{  
+	 
+	format("Broom Broom, togliti dalla strada.") 
+	
+}
+text after_Text_Abigail{
+    
+	 
+    format("Ho persooooooo, broom broom.") 
+ 
+
+	
+}
+
+
+script Autostrada_EventScript_Davide{
+    
+	trainerbattle_single(TRAINER_ANTHONY, Battle_Text_Davide,after_Text_Davide)
+	msgbox(format("DAVIDE: Ciao Alice, ti serve un Dyson?"), MSGBOX_NPC)
+	closemessage
+
+	
+}
+text Battle_Text_Davide{
+    
+	 format("DAVIDE: Ciao Alice, ti serve un Dyson?") 
+ 
+}
+text after_Text_Davide{
+    
+format("Ho persooooooo, fammi ascoltare un po' di musica con le mie super cuffie.")
+	
+}
+
+
+
+ script  Autostrada_EventScript_Benjamin{
+    
+	trainerbattle_single(TRAINER_BENJAMIN_1, Battle_Text_Benjamin,after_Text_Benjamin)
+ 
+
+	
+}
+text Battle_Text_Benjamin{
+     
+format("La bici è relax… Ma un po’ di lotta ci sta!") 
+
+} 
+text after_Text_Benjamin{
+     
+ format("La prossima volta porto un’amaca.") 
+
+} 
+ 
+
+script Autostrada_EventScript_CyclingGuy1{
+    msgbox(format("Broom Broom! Attento a non finire sotto una ruota!"), MSGBOX_NPC)
+    closemessage
+}
+
+script Autostrada_EventScript_Jasmine{
+    trainerbattle_single(TRAINER_JASMINE, Battle_Text_Jasmine, after_Text_Jasmine)
+    msgbox(format("Con questo sole, pedalare sembra volare..."), MSGBOX_NPC)
+    closemessage
+}
+
+text Battle_Text_Jasmine{
+ format("Con questo sole, pedalare sembra volare... Ma vediamo se voli anche in battaglia!") 
+}
+
+text after_Text_Jasmine{
+ format("Hai lo spirito del vento… bello e imprevedibile!") 
+}
+
+
+script Autostrada_EventScript_Jacob{
+    trainerbattle_single(TRAINER_JACOB, Battle_Text_Jacob, after_Text_Jacob)
+    msgbox(format("Broom Broom"), MSGBOX_NPC)
+    closemessage
+}
+
+text Battle_Text_Jacob{
+    format("Ehi tu! Sei veloce? Vediamo chi vince!") 
+}
+
+text after_Text_Jacob{
+    format("Accidenti! Sei più rapido della mia bici!") 
+}
+text Autostrada_EventScript_CyclingGuy2{
+    format("Corro così veloce che i Pidgey mi mangiano la polvere!") 
+}
+
+script Autostrada_EventScript_ChallengeGuy{
+    msgbox(format("Sfido ogni allenatore che incontro! Tu sembri un degno avversario... forse."), MSGBOX_NPC)
+    closemessage
+}
+ 

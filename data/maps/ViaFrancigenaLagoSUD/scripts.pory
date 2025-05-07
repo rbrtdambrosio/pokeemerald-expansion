@@ -1,0 +1,68 @@
+mapscripts ViaFrancigenaLagoSUD_MapScripts {
+    MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupLagoSUD
+    MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+    MAP_SCRIPT_ON_RESUME: Script_MaxLv15
+
+}
+script 	HideMapNamePopupLagoSUD{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+
+script ViaFrancigenaLagoSUD_sign_Tip6{
+    msgbox(format("Tip 6: Alcuni tuoi amici sono dei veri appassionati di pokemon. Se non riesci a batterli ora, riprova quando sarai piu' forte"))
+closemessage
+}
+
+//VAR_ZIO_PESCATORE conytrolla le interazioni con lo zio.
+// VAR_ZIO_PESCATORE viene settata a 9 o 10 per triggerare la fine della quest
+// Una volta che il player ottiene la ricompensa, viene settata a 11 
+script ViaFrancLago_EventScript_MariaCristina{
+    if (checkitem(ITEM_DIZIONARIO_ELFICO)==1){ 
+        call(battaglia_mariaCristina) 
+        if(flag(FLAG_POKE_BALL_MC)){
+             msgbox(MariaCristina_out_battle, MSGBOX_NPC)
+        }else{
+            msgbox(format("Visto che mi hai battuta ti regalo questa"), MSGBOX_NPC)
+            giveitem(ITEM_POKE_BALL)
+            setflag(FLAG_POKE_BALL_MC)
+            addvar(VAR_NUM_POKEBALL,1)
+             msgbox(format("Ricorda per vedere nei posti piu' bui devi gridare Earendil"), MSGBOX_NPC)
+            //setvar(VAR_grottaAccess,1)
+        }
+        
+    }
+     if (checkitem(ITEM_DIZIONARIO_ELFICO)==0){
+        msgbox(MariaCristina_Text2, MSGBOX_NPC)
+    }
+    closemessage
+   
+
+}
+
+
+text MariaCristina_Text{
+        format("MARYCRI:Ciao Ali, sto facendo una passeggiata per connettermi con la natura.\p"
+        "Ti va di giocare con me?")
+}
+text MariaCristina_Dopo{
+        format("MARYCRI:Nooooooo, ho perso!")
+}
+text MariaCristina_out_battle{
+        format("MARYCRI:E' proprio una bella giornata;\p"
+        " mi e' venuta voglia di vedere un concerto scandinavo\p"
+        "dove sacrificano un Jigglipuff sull'altare...ah per andare avanti su questa strada\p"
+        "ti serve RockSmash. So che Roberta ha un pokemon con questa abilita' prova a chiedere a lei\p"
+        "L'ho vista con Luca, si incamminavano nel boschetto davanti casa tua.")
+}
+text MariaCristina_Text2{
+        format("Isengard fr baj erendil mord terzo giorno\p"
+        "ggrrrr ent erundil l'unico\p"
+        "...\p"
+        "...\p"
+        "probabilmente conoscere un po' di elfico sarebbe utile\p"
+        "Dovrei avere un dizionario in camera")
+}
+script battaglia_mariaCristina {
+	trainerbattle_single(TRAINER_GRUNT_AQUA_HIDEOUT_2, MariaCristina_Text,MariaCristina_Dopo)
+ }

@@ -1,0 +1,68 @@
+{
+  "id": "MAP_VIA_FRANCIGENA_MIDDLE_SUD",
+  "name": "ViaFrancigenaMiddleSUD",
+  "layout": "LAYOUT_VIA_FRANCIGENA_MIDDLE_SUD",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_VIA_FRANCIGENA_MIDDLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_VIA_FRANCIGENA_MIDDLE_NORD",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO_NORD",
+      "offset": 28,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_UP_HILLS",
+      "offset": -20,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO_SUD",
+      "offset": 0,
+      "direction": "right"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 18,
+      "y": 16,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancEast_EventScript_esche_zio",
+      "flag": "FLAG_esche_zio"
+    }
+  ],
+  "warp_events": [
+
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "item": "ITEM_POTION",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_104_POTION"
+    }
+  ]
+}

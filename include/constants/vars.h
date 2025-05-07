@@ -95,27 +95,27 @@
 #define VAR_POKELOT_RND1                                 0x404B
 #define VAR_POKELOT_RND2                                 0x404C
 #define VAR_POKELOT_PRIZE_PLACE                          0x404D
-#define VAR_UNUSED_0x404E                                0x404E // Unused Var
+#define VAR_CASA_ALICE_USCITA                               0x404E // Utilizzata per lasciare casa di alice
 #define VAR_LOTAD_SIZE_RECORD                            0x404F
 #define VAR_LITTLEROOT_TOWN_STATE                        0x4050
 #define VAR_OLDALE_TOWN_STATE                            0x4051
-#define VAR_DEWFORD_TOWN_STATE                           0x4052 // Unused Var
+#define VAR_DONATO                           0x4052 // Variabile per Donato
 #define VAR_LAVARIDGE_TOWN_STATE                         0x4053
-#define VAR_CURRENT_SECRET_BASE                          0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
-#define VAR_VERDANTURF_TOWN_STATE                        0x4055 // Unused Var
-#define VAR_PACIFIDLOG_TOWN_STATE                        0x4056 // Unused Var
+#define VAR_CURRENT_SECRET_BASE                         0x4054 
+#define VAR_ZIO_PESCATORE                        0x4055 // Variabile per zio pescatore
+#define VAR_INCONTRO_EMANUELE                        0x4056 // Variabile per  incontro emanuele
 #define VAR_PETALBURG_CITY_STATE                         0x4057
 #define VAR_SLATEPORT_CITY_STATE                         0x4058
-#define VAR_MAUVILLE_CITY_STATE                          0x4059 // Unused Var
+#define VAR_DIFFICULTY                      0x4059 // livello difficolta
 #define VAR_RUSTBORO_CITY_STATE                          0x405A
-#define VAR_FORTREE_CITY_STATE                           0x405B // Unused Var
-#define VAR_LILYCOVE_CITY_STATE                          0x405C // Unused Var
+#define VAR_LOGICA_CASA                          0x405B // variabile controllo dialoghi Paola e tommaso
+#define VAR_NUM_POKEBALL                         0x405C // Variabile controllo numero pokeball
 #define VAR_MOSSDEEP_CITY_STATE                          0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE                        0x405E
-#define VAR_EVER_GRANDE_CITY_STATE                       0x405F // Unused Var
+#define VAR_NightmareMode                       0x405F // VAr che controlla i liv dei pokemon nella grotta
 #define VAR_ROUTE101_STATE                               0x4060
-#define VAR_ROUTE102_STATE                               0x4061 // Unused Var
-#define VAR_ROUTE103_STATE                               0x4062 // Unused Var
+#define VAR_MAX_AREA_LEVEL                               0x4061 // set max level per area of wild pkm
+#define VAR_grottaAccess                              0x4062 // trigger grotta francigenaa entrance
 #define VAR_ROUTE104_STATE                               0x4063
 #define VAR_ROUTE105_STATE                               0x4064 // Unused Var
 #define VAR_ROUTE106_STATE                               0x4065 // Unused Var

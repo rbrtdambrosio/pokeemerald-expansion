@@ -1158,3 +1158,47 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/StanzaAlice/scripts.inc"
 
 	.include "data/maps/SaloneeCucina/scripts.inc"
+
+	.include "data/maps/ViaFrancigena/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaLago/scripts.inc"
+
+	.include "data/maps/TempCasaAlice/scripts.inc"
+
+	.include "data/maps/TempViaFrancigena/scripts.inc"
+
+	.include "data/maps/TempViaFrancigena30/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaLagoNord/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaLagoSUD/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaMiddleSUD/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaMiddleNORD/scripts.inc"
+
+	.include "data/maps/ViaFrancigenaUpHills/scripts.inc"
+
+	.include "data/maps/GrottaFrancigena_1F/scripts.inc"
+
+	.include "data/maps/GrottaFrancigena_2F/scripts.inc"
+
+	.include "data/maps/Indoor_Vecchio_Piromane/scripts.inc"
+
+	.include "data/maps/Autostrada/scripts.inc"
+
+	.include "data/maps/Lago_Wild_Area/scripts.inc"
+
+	.include "data/maps/Lago_Wild_Area_Bike/scripts.inc"
+
+	.include "data/maps/Grotta_Francigena_Last_Floor/scripts.inc"
+
+	.include "data/maps/CampoGizzi_CasaMavi/scripts.inc"
+
+	.include "data/maps/CampoGizzi_Mavi_Inddor/scripts.inc"
+
+	.include "data/maps/CampoGizzyMaviGym/scripts.inc"
+
+	.include "data/maps/CampoGizzi_Casa_Sami/scripts.inc"
+
+	.include "data/maps/CampoGizziSamigym/scripts.inc"

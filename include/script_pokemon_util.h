@@ -8,9 +8,15 @@ void CreateScriptedDoubleWildMon(u16, u8, u16, u16, u8, u16);
 void ScriptSetMonMoveSlot(u8, u16, u8);
 void ReducePlayerPartyToSelectedMons(void);
 void HealPlayerParty(void);
+bool8 CheckPartyFullHealed(void);
+u8 NumberBalltogive(void);
+int NumberPokemoninParty(void);
+u16 GetItemQuantityByIdScript(void);
+int NumberPokeballinBag(void);
 void Script_GetChosenMonOffensiveEVs(void);
 void Script_GetChosenMonDefensiveEVs(void);
 void Script_GetChosenMonOffensiveIVs(void);
 void Script_GetChosenMonDefensiveIVs(void);
+void DeleteChosenPartyMon(void); 
 
 #endif // GUARD_SCRIPT_POKEMON_UTIL_H

@@ -3272,6 +3272,20 @@ void ChangePokemonNickname_CB(void)
     CB2_ReturnToFieldContinueScriptPlayMapMusic();
 }
 
+   
+ 
+void ChangePokemonNickname_ROB_Milla(void)
+{
+    const u8 gRobertoString[] = _("Milla");
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gRobertoString);
+}
+void ChangePokemonNickname_ROB_Mina(void)
+{
+    const u8 gRobertoString[] = _("Mina");
+    SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gRobertoString);
+}
+
+
 void ChangeBoxPokemonNickname(void)
 {
     struct BoxPokemon *boxMon;

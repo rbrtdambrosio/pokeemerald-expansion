@@ -9,6 +9,11 @@
 		.align 2
 gSpecials::
 	def_special HealPlayerParty
+	def_special CheckPartyFullHealed
+	def_special NumberBalltogive
+	def_special NumberPokemoninParty
+	def_special NumberPokeballinBag
+	def_special GetPokeBallQuantityScript
 	def_special SetCableClubWarp
 	def_special DoCableClubWarp
 	def_special ReturnFromLinkRoom
@@ -170,7 +175,10 @@ gSpecials::
 	def_special ChooseStarter
 	def_special StartWallyTutorialBattle
 	def_special ChangePokemonNickname
+	def_special ChangePokemonNickname_ROB_Milla
+	def_special ChangePokemonNickname_ROB_Mina
 	def_special ChoosePartyMon
+	def_special DeleteChosenPartyMon
 	def_special GetFirstFreePokeblockSlot
 	def_special DoBerryBlending
 	def_special PlayRoulette

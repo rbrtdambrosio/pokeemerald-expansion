@@ -1,0 +1,8 @@
+mapscripts Grotta_Francigena_Last_Floor_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: VAR_NightmareModeON
+
+}
+script 	VAR_NightmareModeON{
+	setvar(VAR_NightmareMode,1)
+}

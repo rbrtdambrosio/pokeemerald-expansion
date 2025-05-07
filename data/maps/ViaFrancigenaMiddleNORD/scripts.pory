@@ -1,0 +1,159 @@
+mapscripts ViaFrancigenaMiddleNORD_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupMiddleNord
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+MAP_SCRIPT_ON_RESUME: Script_MaxLv12
+}
+ 
+
+
+ 
+script 	HideMapNamePopupMiddleNord{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+	
+
+  script ViaFrancigenaMiddleNORD_Sign_Tip_3{
+     msgbox(format("Tip 3: I mirtilli sono una panacea, ed anche uno dei pochi modi per curare il tuo party. Fanne buon uso."))
+  closemessage
+  }
+
+script ViaFrancigenaMiddleNORD_Sign_Tip_4{
+     msgbox(format("Tip 4: Se perdi le Pokeball, Emanuele te le restituisce"))
+  closemessage
+  }
+
+
+ //------------------------- logica incontro emanuele
+
+script ViaFrancEast_EventScript_incontro_emanuele_up{
+lockall 
+setvar(VAR_INCONTRO_EMANUELE,1)
+	msgbox(Text_Emanuele_from_Afar, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER, Francigena_mov_alice_up )
+	waitmovement(0)
+	applymovement(1, Francigena_mov_manuele_verso_alice )
+	waitmovement(0)
+	call(battaglia_emanuele) 
+    closemessage
+release
+ }
+  script ViaFrancEast_EventScript_incontro_emanuele_down{
+lockall 
+setvar(VAR_INCONTRO_EMANUELE,1)
+	msgbox(Text_Emanuele_from_Afar, MSGBOX_DEFAULT)
+	closemessage
+	applymovement(OBJ_EVENT_ID_PLAYER, Francigena_mov_alice_down )
+	waitmovement(0)
+	applymovement(1, Francigena_mov_manuele_verso_alice )
+	waitmovement(0)
+	call(battaglia_emanuele) 
+    closemessage
+release
+ }
+
+
+script battaglia_emanuele {
+	trainerbattle_single(TRAINER_MAY_ROUTE_103_MUDKIP, Text_Emanuele_1, Text_EmanualePostBattle,ViaFrancEast_EventScript_postBattle)
+ }
+
+script ViaFrancEast_EventScript_postBattle{
+
+    //* === 1) partyCount → VAR_RESULT ============================== */
+    specialvar(VAR_RESULT, NumberPokemoninParty)
+   // buffernumberstring(STR_VAR_1, VAR_RESULT)
+    //msgbox("DEBUG: Party={STR_VAR_1}", MSGBOX_DEFAULT)
+
+    //* === 2) need = MAX_BALL – partyCount → VAR_UNUSED_0x8014 ===== */
+    copyvar(VAR_UNUSED_0x8014, VAR_NUM_POKEBALL)
+    subvar(VAR_UNUSED_0x8014, VAR_RESULT)
+    //buffernumberstring(STR_VAR_1, VAR_UNUSED_0x8014)
+    //msgbox("DEBUG: Need after party sub={STR_VAR_1}", MSGBOX_DEFAULT)
+
+    //* === 3) bagCount → VAR_RESULT ================================ */
+    setvar(VAR_0x8004, ITEM_POKE_BALL)                 // param 1
+    specialvar(VAR_RESULT, GetPokeBallQuantityScript)
+    //buffernumberstring(STR_VAR_1, VAR_RESULT)
+    //msgbox("DEBUG: BagCount={STR_VAR_1}", MSGBOX_DEFAULT)
+
+   //* === 4) need = need – bagCount → VAR_UNUSED_0x8014 =========== */
+    subvar(VAR_UNUSED_0x8014, VAR_RESULT)
+    //buffernumberstring(STR_VAR_1, VAR_UNUSED_0x8014)
+    //msgbox("DEBUG: Final need={STR_VAR_1}", MSGBOX_DEFAULT)
+
+    //* === 5) Branch ============================================== */
+    if(var(VAR_UNUSED_0x8014) == 0){
+        msgbox("EMANUELE: Hai gia tutte le pokeball cge ti servono. Se ne perdi qualcuna torna da me!", MSGBOX_DEFAULT)
+    }else{
+        buffernumberstring(STR_VAR_1, VAR_UNUSED_0x8014)
+        msgbox("EMANUELE: ti mancano {STR_VAR_1} Poké Ball,\p eccole!", MSGBOX_DEFAULT)
+        giveitem(ITEM_POKE_BALL, VAR_UNUSED_0x8014)
+    }
+
+    closemessage
+}
+
+
+
+ script ViaFrancigenaMiddleNORD_EventScript_InteragisciJolly {
+    lockall
+    showmonpic(SPECIES_MIGHTYENA,10,3)
+    msgbox(format("Jolly si sta godendo un po di sole"))
+    msgbox(format("JOLLY: Woof Woff"))
+    hidemonpic
+    waitmessage
+	releaseall
+}
+
+
+script ViaFrancigenaMiddleNORD_EventScript_Mirtilli{
+    lockall
+    specialvar(VAR_RESULT,CheckPartyFullHealed)
+    if(var(VAR_RESULT)){
+        msgbox(format("Oh una pianta di mirtilli, fa miracoli!"))
+     }elif(!var(VAR_RESULT)){
+        msgbox(format("Mirtilli selvatici! Non c'e' nulla di meglio per curare tutti i mali"))
+         msgbox("I tuoi Pokemon sono guariti")
+        special(HealPlayerParty)
+        setrespawn(HEAL_LOCATION_ViaFrancigenaMiddleNORD_Mirtilli)
+   }
+   	releaseall
+
+}
+
+
+movement Francigena_mov_alice_up{
+	walk_down *2
+	
+}
+movement Francigena_mov_alice_down{
+	walk_down
+	
+}
+movement Francigena_mov_manuele_verso_alice {
+	walk_up *6
+	walk_right *5
+	face_down
+}
+
+text Text_Emanuele_from_Afar{
+	 format("EMANUELE:Aliceeeeeeeeeee!") 
+}
+text Text_Emanuele_1{
+	 format("EMANUELE:Ciao Alice! Donato si sta allenando, vero?!\p"
+	 "Allora aspetto un po' altrimenti mi fa correre anche a me.\p"
+	 "Ti va di fare una combattimento?") 
+}
+text Text_EmanualePostBattle{
+	 format("EMANUELE:Accipicchia!, Sei diventata forte.") 
+}
+text Text_Emanuele_off_battle{
+	 format("EMANUELE:Aspetto un altro po' e raggiungo Donato") 
+}
+text Text_Emanuele_no_Potions{
+	 format("EMANUELE:Devi stare attenta qui intorno\p"
+     "e' pieno di cinghilai\p"
+     "prendi questa pozione") 
+}
+
+

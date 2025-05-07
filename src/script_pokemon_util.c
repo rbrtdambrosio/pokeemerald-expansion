@@ -45,6 +45,156 @@ void HealPlayerParty(void)
         FlagSet(B_FLAG_TERA_ORB_CHARGED);
 }
 
+//-----RD EDIT
+// doesn't check pokemon status
+bool8 CheckPartyFullHealed(void)
+{
+    u8 i, j;
+    bool8 Result;
+    Result = TRUE;
+    for (i = 0; i < gPlayerPartyCount; i++)
+    {
+        bool32 canBeHealed = FALSE;
+        struct Pokemon *mon = &gPlayerParty[i];
+        u16 curr = GetMonData(mon, MON_DATA_HP);
+        u16 max = GetMonData(mon, MON_DATA_MAX_HP);
+        if (curr >= max  )
+        {
+            u8 ppBonuses = GetMonData(mon, MON_DATA_PP_BONUSES);
+            for (j = 0; j < MAX_MON_MOVES; j++)
+            {
+                u16 move = GetMonData(mon, MON_DATA_MOVE1 + j);
+                max = CalculatePPWithBonus(move, ppBonuses, j);
+                curr = GetMonData(mon, MON_DATA_PP1 + j);
+                if (curr < max)
+                {
+                    canBeHealed = TRUE;
+                    break;
+                }
+            }
+        }
+        else
+        {
+            canBeHealed = TRUE;
+            
+        }
+
+        if (canBeHealed == TRUE)
+        {
+            Result = FALSE;
+            break;
+            
+        }   
+
+    }
+    return Result;
+}
+// --------------------------
+void DeleteChosenPartyMon(void)
+{
+    if (gSpecialVar_0x8004 != PARTY_SIZE)
+    {
+        ZeroMonData(&gPlayerParty[gSpecialVar_0x8004]);
+        CompactPartySlots();
+    }
+}
+
+u8 NumberBalltogive(void)
+{
+    int i;
+    u8 numpokeball;
+    numpokeball=0;
+    for (i=0; i<VarGet(VAR_NUM_POKEBALL);i++){
+        numpokeball=numpokeball+1;
+    }
+        if(gPlayerPartyCount==1)
+        {
+            return(numpokeball);
+        }else{
+            return (numpokeball-(gPlayerPartyCount-1));
+        }
+       
+    
+}
+
+int NumberPokemoninParty(void)
+{
+    if (gPlayerPartyCount <= 1)
+        return 0;                    // only the starter
+    return gPlayerPartyCount - 1;    // subtract the starters once
+}
+// int NumberPokemoninParty(void){
+//  //return the number of pokemon in party less the starters
+// if (gPlayerPartyCount==1){
+//     return 0;
+// }else{
+//     int i;
+//     int numpokem;
+//     numpokem=0;
+//     for (i=0; i<=gPlayerPartyCount;i++){
+//         numpokem=numpokem+1;
+//     }
+//     return  numpokem;
+// }
+      
+  
+//}
+
+int NumberPokeballinBag(void){
+   return(POKEBALL_COUNT);
+}
+
+// bool8 GetItemQuantityByIdScript(void)
+// {
+//     u16 itemId = gSpecialVar_0x8004;              // ← 1° argomento
+
+//     u8 pocket = ItemId_GetPocket(itemId) - 1;     // Pocket 1‑based → 0‑based
+//     struct BagPocket *bagPocket = &gBagPockets[pocket];
+
+//     for (u16 i = 0; i < bagPocket->capacity; i++)
+//     {
+//         if (bagPocket->itemSlots[i].itemId == itemId)
+//         {
+//             VarSet(VAR_RESULT,
+//                    BagGetQuantityByPocketPosition(pocket + 1, i));
+//             return FALSE;     // continua lo script
+//         }
+//     }
+
+//     VarSet(VAR_RESULT, 0);    // item non presente
+//     return FALSE;
+// }
+
+u16 GetPokeBallQuantityScript(void)
+{
+    u8 pocketId = POCKET_POKE_BALLS;          // constant (1‑based)
+    struct BagPocket *bagPocket = &gBagPockets[pocketId - 1];
+    u16 total = 0;
+
+    for (u16 i = 0; i < bagPocket->capacity; i++)
+    {
+        struct ItemSlot *slot = &bagPocket->itemSlots[i];
+
+        // Count only regular Poké Ball (not Great/Ultra) and skip empties
+        if (slot->itemId == ITEM_POKE_BALL)
+            total += BagGetQuantityByPocketPosition(pocketId, i);
+    }
+
+   // VarSet(VAR_RESULT, total);
+    return total;
+}
+
+ 
+
+
+
+
+
+
+
+
+
+
 static void HealPlayerBoxes(void)
 {
     int boxId, boxPosition;
@@ -456,7 +606,8 @@ static u32 ScriptGiveMonParameterized(u8 side, u8 slot, u16 species, u8 level, u
 
 u32 ScriptGiveMon(u16 species, u8 level, u16 item)
 {
-    u8 evs[NUM_STATS]        = {0, 0, 0, 0, 0, 0};
+    // rd edit before evs were all zero
+    u8 evs[NUM_STATS]        = {1, 1, 1, 1, 1, 1};
     u8 ivs[NUM_STATS]        = {MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1,   // We pass "MAX_PER_STAT_IVS + 1" here to ensure that
                                 MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1, MAX_PER_STAT_IVS + 1};  // ScriptGiveMonParameterized won't touch the stats' IV.
     u16 moves[MAX_MON_MOVES] = {MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE};

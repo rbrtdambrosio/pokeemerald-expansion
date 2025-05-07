@@ -1,0 +1,87 @@
+{
+  "id": "MAP_VIA_FRANCIGENA_LAGO_NORD",
+  "name": "ViaFrancigenaLagoNord",
+  "layout": "LAYOUT_VIA_FRANCIGENA_LAGO_NORD",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_VIA_FRANCIGENA_MIDDLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_TEMP_CASA_ALICE",
+      "offset": -13,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_MIDDLE_NORD",
+      "offset": 7,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_MIDDLE_SUD",
+      "offset": -28,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO_SUD",
+      "offset": 3,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FISHERMAN",
+      "x": 18,
+      "y": 9,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancEast_EventScript_zio_pescatore",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_F",
+      "x": 9,
+      "y": 7,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancLagoNord_EventScript_maresciallo",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 6,
+      "elevation": 0,
+      "dest_map": "MAP_INDOOR_VECCHIO_PIROMANE",
+      "dest_warp_id": "0"
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 7,
+      "y": 9,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViaFrancigenaLagoNord_Sign_Tip5"
+    }
+  ]
+}

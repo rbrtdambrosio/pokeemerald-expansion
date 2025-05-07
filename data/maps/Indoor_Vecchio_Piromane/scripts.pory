@@ -1,0 +1,27 @@
+mapscripts Indoor_Vecchio_Piromane_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNameIndoor_VP
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+
+}
+script 	HideMapNameIndoor_VP{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+ 
+script EventScript_VecchioPiromane{
+    
+      msgbox(format("VECCHIO PIROMANE: E' propria na bella irnata; pur ogg so dat foc alla r'stoccia. "), MSGBOX_NPC)
+	closemessage
+
+}
+script Indoor_Vecchio_Piromane_EventScript_AzumarillAzumeril{
+    
+        msgbox(format("AZUMARILL: Maririroo!"), MSGBOX_NPC)
+	closemessage
+	 
+
+}
+ script Autostrada_EventScript_SeasideParkingSign{
+    msgbox(format("Strada Stadale Vandra"))
+closemessage
+}

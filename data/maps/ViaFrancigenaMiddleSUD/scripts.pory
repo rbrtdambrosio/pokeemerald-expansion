@@ -1,0 +1,47 @@
+mapscripts ViaFrancigenaMiddleSUD_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupMiddleSUD
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+MAP_SCRIPT_ON_RESUME: Script_MaxLv12
+}
+
+
+
+
+
+
+script 	HideMapNamePopupMiddleSUD{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+	
+
+
+// -----------------------------------------logica esche zio
+script ViaFrancEast_EventScript_esche_zio{
+	lockall
+	showmonpic(SPECIES_CATERPIE,10,3)
+	if(var(VAR_ZIO_PESCATORE) ==0){
+		
+		msgbox(TrovatoEsche_prima_della_quest_text)
+		setvar(VAR_ZIO_PESCATORE,9)
+		removeobject(1)
+		setflag(FLAG_esche_zio)
+
+	}elif(var(VAR_ZIO_PESCATORE) >=1){
+		msgbox(TrovatoEsche_during_quest_text)
+		setvar(VAR_ZIO_PESCATORE,10)
+		removeobject(1)
+		setflag(FLAG_esche_zio)
+	}
+   hidemonpic
+   waitmessage
+   releaseall
+}
+
+
+text TrovatoEsche_prima_della_quest_text{
+        format("Ha trovato delle esche per la pesca!") 
+}
+text TrovatoEsche_during_quest_text{
+        format("Queste devono essere le esche perse da zio!\p"
+		"Sara' felice!") 
+}

@@ -2712,4 +2712,8 @@ extern const u8 gText_Relearn[]; // move relearner from summary screen
 extern const u8 gText_Rename[]; // change nickname from summary screen
 extern const u8 gText_PlayerName[];
 
+extern const u8 gText_easy[]; //  RD edit
+extern const u8 gText_medium[]; //  
+extern const u8 gText_hard[];
+
 #endif // GUARD_STRINGS_H

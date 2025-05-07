@@ -1,0 +1,106 @@
+mapscripts ViaFrancigenaUpHills_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupUpHill
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF
+MAP_SCRIPT_ON_RESUME: Script_MaxLv12
+
+}
+script 	HideMapNamePopupUpHill{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+ 
+ 
+
+script ViaFrancigenaUpHill_EventScript_Mirtilli{
+    lockall
+    specialvar(VAR_RESULT,CheckPartyFullHealed)
+    if(var(VAR_RESULT)){
+        msgbox(format("Oh una pianta di mirtilli, fa miracoli!"))
+     }elif(!var(VAR_RESULT)){
+        msgbox(format("Mirtilli selvatici! Non c'e' nulla di meglio per curare tutti i mali"))
+         msgbox("I tuoi Pokemon sono guariti")
+        special(HealPlayerParty)
+        setrespawn(HEAL_LOCATION_ViaFrancigenaUpHill_Mirtilli)
+   }
+   	releaseall
+
+}
+
+
+script nonEntrareInQuellaGrotta{
+ 
+ if (flag(FLAG_POKE_BALL_MC)){
+ msgbox(format("ERENDIL!!!!!"),MSGBOX_NPC)
+ }else{
+	 
+	//applymovement(OBJ_EVENT_ID_PLAYER, uphill_mov_alice )
+ 
+    waitmovement(0)
+    applymovement(2, uphill_mov_donato_verso_alice )
+	waitmovement(0)
+    msgbox(format("DONATO: Aspetta Alice, Non entrare e' troppo buio! \p" 
+    "Ho visto MariaCristina entrare ed uscire piu' volte da questa grotta.\p" 
+    "Forse lei puo' dirti come entrare.\p"
+    "L'ultima volta che l'ho vitsa faceva cose strane vicino al lago."),MSGBOX_NPC)
+    closemessage
+    applymovement(OBJ_EVENT_ID_PLAYER, uphill_mov_alice2 )
+    	waitmovement(0)
+ }
+}
+ 
+movement uphill_mov_donato_verso_alice{
+face_right
+ }
+movement uphill_mov_alice2 {
+    walk_down
+    face_down
+}
+ 
+
+
+script UpHill_EventScript_Emanuele{
+msgbox(format("EMANUELE: Ciao Alice, ho visto i tuoi amici Luca e Roberta entrare nella grotta; fai attenzione!"), MSGBOX_NPC)
+closemessage
+
+call(ViaFrancEast_EventScript_postBattle)
+ 
+
+	
+}
+
+script Uphill_Donato{
+specialvar(VAR_RESULT,CalculatePlayerPartyCount) 
+	if(var(VAR_RESULT)>1){ 
+		lockall
+ 		msgbox(Donato_text_cancella_pkm, MSGBOX_YESNO)
+		 if (var(VAR_RESULT) != 1) {
+                msgbox(format("DONATO:Ok, torno ad allenarmi"))
+			
+                
+            }elif (var(VAR_RESULT) == 1) {
+				msgbox(format("DONATO:Seleziona il tuo pkm"))
+				special(ChoosePartyMon)
+				waitstate
+				special(ChoosePartyMon)
+				waitstate
+				if(var(VAR_0x8004) == PARTY_NOTHING_CHOSEN){
+    		 
+					msgbox( format("DONATO: Ok sara' per la prossima volta"))
+				}
+				else{
+    				special(DeleteChosenPartyMon)
+					msgbox(format("DONATO: Il tuo pokemon e' tormato libero"))
+					msgbox(format("DONATO: eccoti anche la pokeball in cui si trovava"))
+					giveitem(ITEM_POKE_BALL)
+				}
+
+			}
+		releaseall
+	 
+}
+call(givepotionifzero)
+msgbox(format("DONATO: Uno due, uno due; sicura che non vuoi venire a correre?"))
+closemessage
+}
+
+ 

@@ -1,0 +1,92 @@
+mapscripts ViaFrancigena_MapScripts {}
+
+
+// // -----------------------------------------logica esche zio
+// script ViaFrancEast_EventScript_esche_zio{
+// 	lockall
+// 	showmonpic(SPECIES_CATERPIE,10,3)
+// 	if(var(VAR_ZIO_PESCATORE) ==0){
+		
+// 		msgbox(TrovatoEsche_prima_della_quest_text)
+// 		setvar(VAR_ZIO_PESCATORE,9)
+// 		removeobject(2)
+// 		setflag(FLAG_esche_zio)
+
+// 	}elif(var(VAR_ZIO_PESCATORE) >=1){
+// 		msgbox(TrovatoEsche_during_quest_text)
+// 		setvar(VAR_ZIO_PESCATORE,10)
+// 		removeobject(2)
+// 		setflag(FLAG_esche_zio)
+// 	}
+//    hidemonpic
+//    waitmessage
+//    releaseall
+// }
+
+
+// text TrovatoEsche_prima_della_quest_text{
+//         format("Ha trovato delle esche per la pesca!") 
+// }
+// text TrovatoEsche_during_quest_text{
+//         format("Queste devono essere le esche perse da zio!\p"
+// 		"Sara' felice!") 
+// }
+
+
+ //------------------------- logica incontro emanuele
+
+//  script ViaFrancEast_EventScript_incontro_emanuele_up{
+// lockall
+// setvar(VAR_INCONTRO_EMANUELE,1)
+// 	msgbox(Text_Emanuele_from_Afar, MSGBOX_DEFAULT)
+// 	closemessage
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Francigena_mov_alice_up )
+// 	waitmovement(0)
+// 	applymovement(3, Francigena_mov_manuele_verso_alice )
+// 	waitmovement(0)
+// 	call(battaglia_emanuele)
+// release
+//  }
+//   script ViaFrancEast_EventScript_incontro_emanuele_down{
+// lockall
+// setvar(VAR_INCONTRO_EMANUELE,1)
+// 	msgbox(Text_Emanuele_from_Afar, MSGBOX_DEFAULT)
+// 	closemessage
+// 	applymovement(OBJ_EVENT_ID_PLAYER, Francigena_mov_alice_down )
+// 	waitmovement(0)
+// 	applymovement(3, Francigena_mov_manuele_verso_alice )
+// 	waitmovement(0)
+// 	call(battaglia_emanuele)
+	
+// release
+//  }
+
+// script battaglia_emanuele {
+// 	trainerbattle_single(TRAINER_MAY_ROUTE_103_MUDKIP, Text_Emanuele_1, Text_Emanuele_2)
+//  }
+// movement Francigena_mov_alice_up{
+// 	walk_down *2
+// 	face_up
+// }
+// movement Francigena_mov_alice_down{
+// 	walk_down
+// 	face_up
+// }
+// movement Francigena_mov_manuele_verso_alice {
+//     walk_right *3
+// 	walk_up *2
+// 	walk_right *4
+// 	face_down
+// }
+
+// text Text_Emanuele_from_Afar{
+// 	 format("Aliceeeeeeeeeee!") 
+// }
+// text Text_Emanuele_1{
+// 	 format("Ciao Alice! Donato si sta allenando, vero?!\p"
+// 	 "Allora aspetto un po' altrimenti mi fa correre anche a me.\p"
+// 	 "Ti va di fare una combattimento?") 
+// }
+// text Text_Emanuele_2{
+// 	 format("Accipicchia!") 
+// }

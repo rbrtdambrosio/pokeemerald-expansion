@@ -1,0 +1,24 @@
+mapscripts CampoGizzyMaviGym_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupUpCampoGMaviGym
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF
+ 
+
+}
+script 	HideMapNamePopupUpCampoGMaviGym{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+ 
+ script Mavigymbattle{
+
+	 
+	trainerbattle_single(TRAINER_WINONA_1, Mavi_Text,Mavi_Dopo)
+ 
+ }
+
+  text Mavi_Text{
+	format("Iiiiiiiiiiiiiihhhhhhhhhh Aliiiiiiiiiiiii Non batterai mai i miei gatti!")
+ }
+ text Mavi_Dopo{
+	format("Iiiiiiiiiiiiiihhhhhhhhhh Aliiiiiiiiiiiii Sei troppo forte!")
+ }

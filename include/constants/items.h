@@ -990,7 +990,7 @@
 #define ITEM_CHOICE_DUMPLING 824
 #define ITEM_SWAP_SNACK 825
 #define ITEM_TWICE_SPICED_RADISH 826
-#define ITEM_POKESHI_DOLL 827
+#define ITEM_DIZIONARIO_ELFICO 827
 
 #define ITEM_STRANGE_BALL 828
 
@@ -998,6 +998,7 @@
 // LEGEND PLATE
 
 #define ITEMS_COUNT 829
+//#define ITEM_DIZIONARIO_ELFICO 830
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

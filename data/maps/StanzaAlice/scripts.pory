@@ -1,0 +1,79 @@
+mapscripts StanzaAlice_MapScripts {
+	MAP_SCRIPT_ON_LOAD: StanzaAlice_On_Load
+	 MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+}
+
+script 	NightmareModeOFF{
+	setvar(VAR_NightmareMode,0) 
+}
+
+script 	HideMapNamePopup{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+
+
+script temp_bike{
+	giveitem(ITEM_ACRO_BIKE)
+	checkplayergender
+	if(var(VAR_RESULT)==FEMALE){
+		msgbox(format("FEMMINA"), MSGBOX_DEFAULT)
+	
+	}elif(var(VAR_RESULT)==MALE){
+		msgbox(format("Machio"), MSGBOX_DEFAULT)
+	
+	}
+	closemessage
+}
+
+
+script StanzaAlice_On_Load{
+	//setvar(VAR_DIFFICULTY,0)
+	setrespawn(HEAL_LOCATION_STANZA_ALICE) 
+	setflag(FLAG_BADGE03_GET)
+	setvar(VAR_MAX_AREA_LEVEL,5)
+}
+
+script DizionarioElfico_Sign {
+	msgbox(format("Il Dizionario EI: Elfico Italiano, sempre utile in ogni occasione"), MSGBOX_DEFAULT)
+	giveitem(ITEM_DIZIONARIO_ELFICO)
+	closemessage
+}
+
+script temp_pokeball{
+		lockall
+		giveitem(ITEM_POKE_BALL) 
+		removeobject(1)  
+		setflag(FLAG_pokeballstanza)
+ 
+		addvar(VAR_NUM_POKEBALL,1)
+ 
+ 
+ 
+   releaseall
+}
+script scelta_livello_diff{
+	 
+// 	buffernumberstring(STR_VAR_1, VAR_NightmareMode)
+// msgbox("VAR_NightmareMode {STR_VAR_1}", MSGBOX_DEFAULT)
+	//buffernumberstring(STR_VAR_1, !var(VAR_NightmareMode))
+//msgbox("!VAR_NightmareMode {STR_VAR_1}", MSGBOX_DEFAULT)
+	msgbox(format("Questo libro parla di videogiochi.\p""Il mio gioco preferito e':"), MSGBOX_DEFAULT)
+	multichoice(25,5,MULTI_DIFFICULTY_LEVEL,0)	 
+	closemessage
+	if(var(VAR_RESULT)==0)
+	{
+	msgbox("Ti piaccioni i giochi semplici\p" , MSGBOX_DEFAULT) 
+	setvar(VAR_DIFFICULTY,0)
+	}elif(var(VAR_RESULT)==1)
+	{
+	msgbox("Ti piaccioni i giochi bilanciati\p" , MSGBOX_DEFAULT)
+	setvar(VAR_DIFFICULTY,1)
+	}
+	elif(var(VAR_RESULT)==2)
+	{
+	msgbox("Ti piaccioni i giochi estremi\p", MSGBOX_DEFAULT) 
+	setvar(VAR_DIFFICULTY,2)
+	}
+	closemessage
+ 
+}

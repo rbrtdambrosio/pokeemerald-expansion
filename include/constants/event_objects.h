@@ -431,4 +431,12 @@
 // '(C)ompressed (E)vent'
 #define COMP_OW_TILE_TAG_BASE 0xCE00
 
+
+//rd edit
+/* ---- bike‑sprite aliases used by the avatar engine ---------------- */
+//#define OBJ_EVENT_GFX_MAY_ACRO_BIKE_FIXED      OBJ_EVENT_GFX_MAY_ACRO_BIKE     // old id 91
+//#define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE_FIXED  OBJ_EVENT_GFX_BRENDAN_MACH_BIKE // old id  1
+//#define OBJ_EVENT_GFX_MAY_MACH_BIKE_FIXED      OBJ_EVENT_GFX_MAY_MACH_BIKE     // old id 90
+/* ------------------------------------------------------------------- */
+
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

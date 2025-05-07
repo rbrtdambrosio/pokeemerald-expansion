@@ -50,6 +50,8 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 
+
+
 enum {
     TRANSITION_TYPE_NORMAL,
     TRANSITION_TYPE_CAVE,
@@ -95,6 +97,10 @@ static void RegisterTrainerInMatchCall(void);
 static void HandleRematchVarsOnBattleEnd(void);
 static const u8 *GetIntroSpeechOfApproachingTrainer(void);
 static const u8 *GetTrainerCantBattleSpeech(void);
+
+//rd edit
+//void BackupPlayerStateBeforeBattle(void);
+//void RestorePlayerStateAfterBattle(void);
 
 EWRAM_DATA static u16 sTrainerBattleMode = 0;
 EWRAM_DATA u16 gTrainerBattleOpponent_A = 0;
@@ -444,6 +450,7 @@ static void CreateBattleStartTask_Debug(u8 transition, u16 song)
 
 void BattleSetup_StartWildBattle(void)
 {
+   // BackupPlayerStateBeforeBattle(); 
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else
@@ -516,6 +523,7 @@ void BattleSetup_StartRoamerBattle(void)
 
 static void DoSafariBattle(void)
 {
+    //BackupPlayerStateBeforeBattle();
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
@@ -526,6 +534,7 @@ static void DoSafariBattle(void)
 
 static void DoBattlePikeWildBattle(void)
 {
+    //BackupPlayerStateBeforeBattle();
     LockPlayerFieldControls();
     FreezeObjectEvents();
     StopPlayerAvatar();
@@ -711,6 +720,9 @@ static void DowngradeBadPoison(void)
 
 static void CB2_EndWildBattle(void)
 {
+    //rd edit
+    //RestorePlayerStateAfterBattle();
+    //----- 
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
 
@@ -728,6 +740,10 @@ static void CB2_EndWildBattle(void)
 
 static void CB2_EndScriptedWildBattle(void)
 {
+    //rd edit
+    //RestorePlayerStateAfterBattle();   
+    //-----
+
     CpuFill16(0, (void *)(BG_PLTT), BG_PLTT_SIZE);
     ResetOamRange(0, 128);
 
@@ -1347,6 +1363,9 @@ void ClearTrainerFlag(u16 trainerId)
 
 void BattleSetup_StartTrainerBattle(void)
 {
+    //rd edit
+    //BackupPlayerStateBeforeBattle();
+
     if (gNoOfApproachingTrainers == 2)
         gBattleTypeFlags = (BATTLE_TYPE_DOUBLE | BATTLE_TYPE_TWO_OPPONENTS | BATTLE_TYPE_TRAINER);
     else
@@ -1438,6 +1457,9 @@ static void HandleBattleVariantEndParty(void)
 
 static void CB2_EndTrainerBattle(void)
 {
+    //rd edit
+    //RestorePlayerStateAfterBattle(); 
+    //-------
     HandleBattleVariantEndParty();
 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
@@ -1466,6 +1488,8 @@ static void CB2_EndTrainerBattle(void)
 
 static void CB2_EndRematchBattle(void)
 {
+    //rd edit
+    //RestorePlayerStateAfterBattle(); 
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
     {
         DowngradeBadPoison();

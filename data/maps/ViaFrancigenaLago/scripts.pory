@@ -1,0 +1,64 @@
+mapscripts ViaFrancigenaLago_MapScripts {}
+
+// //VAR_ZIO_PESCATORE conytrolla le interazioni con lo zio.
+// // VAR_ZIO_PESCATORE viene settata a 9 o 10 per triggerare la fine della quest
+// // Una volta che il player ottiene la ricompensa, viene settata a 11 
+// script ViaFrancEast_EventScript_zio_pescatore{
+//     if (var(VAR_ZIO_PESCATORE) ==0){
+//         msgbox(ZioPescatore_text, MSGBOX_NPC)
+// 		setvar(VAR_ZIO_PESCATORE,1)
+//     }elif(var(VAR_ZIO_PESCATORE) ==1){
+//          msgbox(ZioPescatore_text2, MSGBOX_NPC)
+//          setvar(VAR_ZIO_PESCATORE,2)
+//     }elif(var(VAR_ZIO_PESCATORE) ==2){
+//          msgbox(ZioPescatore_text3, MSGBOX_NPC)
+//          setvar(VAR_ZIO_PESCATORE,3)
+// 	}elif(var(VAR_ZIO_PESCATORE) ==3){
+//          msgbox(ZioPescatore_text4, MSGBOX_NPC)
+//         setvar(VAR_ZIO_PESCATORE,1)
+//     }elif(var(VAR_ZIO_PESCATORE) ==9){
+//          msgbox(ZioPescatore_text_trovate_esche_prima, MSGBOX_NPC)
+// 		 setvar(VAR_ZIO_PESCATORE,11)
+// 		 giveitem(ITEM_GOOD_ROD)
+//     }elif(var(VAR_ZIO_PESCATORE) ==10){
+//          msgbox(ZioPescatore_text_trovate_esche_during_quest, MSGBOX_NPC)
+// 		 setvar(VAR_ZIO_PESCATORE,11)
+// 		 giveitem(ITEM_GOOD_ROD)
+//     }else{
+// 		msgbox(ZioPescatore_text_quest_completata, MSGBOX_NPC)
+		
+// 	}
+
+// }
+
+
+// text ZioPescatore_text{
+//         format("ALICE: Ciao Zio! Che ci fai qui?\p"
+//         "ZIO:Ciao Alice! Sono venuto per pescare ma ho perso le esche!\p"
+// 		"ZIO: Ti posso chiedere un favore? Puoi controllare se mi sono cadute nel campo davanti casa tua?\p"
+// 		"ALICE: Ma che tipo di esche?\p"
+// 		"ZIO: Le stavo trasportando in una pokeball, devono essere rotolate da qualche parte!")
+// }
+// text ZioPescatore_text2{
+//         format("ZIO: Mi raccomando portami le esche e mi raccomando, fai attenzione ai cinghiali!") 
+// }
+// text ZioPescatore_text3{
+//         format("ZIO: Sento che oggi e' una buona giornata! Prendero' sicuramente qualcosa di grosso!") 
+// }
+// text ZioPescatore_text4{
+//         format("ZIO: Mi e' sembrato di vedere un cinghiale! Hai trovato le esche?") 
+// }
+
+// text ZioPescatore_text_trovate_esche_prima{
+//         format("ZIO: Ciao Alice? Come stai? Sono delle esche quelle?\p"
+// 		"Ma quelle sono le mie esche? Ecco dove erano finite.\p"
+// 		"Grazie mille! Prendi questo in cambio!") 
+// }
+// text ZioPescatore_text_trovate_esche_during_quest{
+//         format("ZIO: Hai trovato le esche! Grazie Alice!\p"
+// 		"Prendi questo! Ti sara' utile!") 
+// }
+ 
+//  text ZioPescatore_text_quest_completata{
+//         format("ZIO: Mi godo un altro po' di sole e poi mi metto a pescare! Salutami i tuoi!") 
+// }

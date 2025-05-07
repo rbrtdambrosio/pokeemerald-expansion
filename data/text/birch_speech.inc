@@ -1,20 +1,20 @@
 gText_Birch_Welcome::
-	.string "Welcome to the world of POKéMON!\p"
-	.string "My name is BIRCH.\p"
+	.string "Benvenuti nel mondo dei POKéMON!\p"
+	.string "Io sono BIRCH.\p"
 	.string "$"
 
 gText_Birch_Pokemon::
-	.string "This is what we call a “POKéMON.”\p"
+	.string "E questo qui e' un “POKéMON.”\p"
 	.string "\n"
 	.string "$"
 
 gText_Birch_MainSpeech::
-	.string "This world is widely inhabited by\n"
-	.string "creatures known as POKéMON.\p"
+	.string "Questo e' un mondo popolato\n"
+	.string "da creature chiamate POKéMON.\p"
 	.string "$"
 
 gText_Birch_AndYouAre::
-	.string "And you are?$"
+	.string "E' un piacere conoscerti ALICE$"
 
 gText_Birch_BoyOrGirl::
 	.string "Are you a boy?\n"
@@ -25,22 +25,14 @@ gText_Birch_WhatsYourName::
 	.string "What's your name?$"
 
 gText_Birch_SoItsPlayer::
-	.string "So it's {PLAYER}{KUN}?$"
+	.string " {PLAYER}{KUN}?$"
 
 gText_Birch_YourePlayer::
-	.string "Ah, okay!\p"
-	.string "You're {PLAYER}{KUN} who's moving to my\n"
-	.string "hometown of LITTLEROOT.\l"
-	.string "I get it now!\p"
+	.string "Benvenuta in questo mondo!\p"
+	.string "Fai come se fossi a casa tua!\p"
 	.string "$"
 
 gText_Birch_AreYouReady::
-	.string "All right, are you ready?\p"
-	.string "Your very own adventure is about\n"
-	.string "to unfold.\p"
-	.string "Take courage, and leap into the\n"
-	.string "world of POKéMON where dreams,\l"
-	.string "adventure, and friendships await!\p"
-	.string "Well, I'll be expecting you later.\n"
-	.string "Come see me in my POKéMON LAB.\p"
+	.string "E ricorda\p"
+	.string "Acchiappali tutti!\n"
 	.string "$"

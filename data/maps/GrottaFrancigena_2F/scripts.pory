@@ -1,0 +1,50 @@
+mapscripts GrottaFrancigena_2F_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopup 
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF
+MAP_SCRIPT_ON_RESUME: Script_MaxLv15
+}
+ 
+ 	
+
+
+ 
+script GrottaFrancigena_2F_Sign{
+          msgbox(format("La guardia forestale di Posta Fibreno avvusa: NON ENTRARE, PERICOLO! MORTE SICURA! NOI VE LO ABBIAMO DETTO!!"))
+closemessage
+}
+
+script GrottaFrancigena_2F_Roberta{
+    
+        msgbox(format("ROBERTA: Ciao Ali, ho portato luca qui per infrattarci, ma chiss n gl n te'"), MSGBOX_NPC)
+	closemessage
+
+}
+script GrottaFrancigena_2F_Luca{
+    
+ 
+        trainerbattle_double(TRAINER_KIRA_AND_DAN_1,GrottaFrancigena_2F_Luca_DanIntro,GrottaFrancigena_2F_Luca_Text_DanDefeat,GrottaFrancigena_2F_Luca_Text_DanNotEnoughMons) 
+        msgbox(format("LUCA:Sei stata brava Ali! "), MSGBOX_NPC)
+        if(checkitem(ITEM_HM_ROCK_SMASH)){
+           msgbox(format("LUCA: Mi sta tornando un po' di energia!"), MSGBOX_NPC)   
+        }else{
+           msgbox(format("LUCA: Prendi questa ti sara' utile per andare verso il lago!"), MSGBOX_NPC)       
+           giveitem(ITEM_HM_ROCK_SMASH)
+        }
+        closemessage
+
+}
+
+
+text GrottaFrancigena_2F_Luca_DanIntro
+{
+format("LUCA:n mn te'")
+}
+
+text GrottaFrancigena_2F_Luca_Text_DanNotEnoughMons{
+format("LUCA:se vuoi sfidarci devi avere piu' Pokemon'")
+}
+
+
+text GrottaFrancigena_2F_Luca_Text_DanDefeat{
+format("LUCA:incredibile, abbiamo perso. ROBERTA:Oooh Lu'! E'tutta colpa tua!")
+}

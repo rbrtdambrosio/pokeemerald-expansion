@@ -26,15 +26,21 @@ Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike::
 	end
 
 Route110_SeasideCyclingRoadSouthEntrance_Movement_PushPlayerBackFromCounter:
-	walk_left
+	walk_down
 	step_end
 
 Route110_SeasideCyclingRoadSouthEntrance_EventScript_ClearCyclingRoad::
+    msgbox temp_txt, MSGBOX_DEFAULT
 	lockall
 	clearflag FLAG_SYS_CYCLING_ROAD
 	setvar VAR_TEMP_1, 0
 	releaseall
 	end
+	
+temp_txt:
+ 
+	.string "triggered\n"
+	.string "temp var to 1$"
 
 Route110_SeasideCyclingRoadSouthEntrance_Text_GoAllOutOnCyclingRoad:
 	.string "On CYCLING ROAD, you can go all out\n"

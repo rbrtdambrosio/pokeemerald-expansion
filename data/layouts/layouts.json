@@ -2417,7 +2417,7 @@
       "width": 58,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "0",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/UnusedOutdoorArea/border.bin",
       "blockdata_filepath": "data/layouts/UnusedOutdoorArea/map.bin"
     },
@@ -4440,6 +4440,226 @@
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/SaloneeCucina/border.bin",
       "blockdata_filepath": "data/layouts/SaloneeCucina/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA",
+      "name": "ViaFrancigena_Layout",
+      "width": 60,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigena/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigena/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_LAGO",
+      "name": "ViaFrancigenaLago_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaLago/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaLago/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEMP_CASA_ALICE",
+      "name": "TempCasaAlice_Layout",
+      "width": 28,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/TempCasaAlice/border.bin",
+      "blockdata_filepath": "data/layouts/TempCasaAlice/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEMP_VIA_FRANCIGENA",
+      "name": "TempViaFrancigena_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/TempViaFrancigena/border.bin",
+      "blockdata_filepath": "data/layouts/TempViaFrancigena/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEMP_VIA_FRANCIGENA30",
+      "name": "TempViaFrancigena30_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/TempViaFrancigena30/border.bin",
+      "blockdata_filepath": "data/layouts/TempViaFrancigena30/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_LAGO_NORD",
+      "name": "ViaFrancigenaLagoNord_Layout",
+      "width": 30,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaLagoNord/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaLagoNord/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_LAGO_SUD",
+      "name": "ViaFrancigenaLagoSUD_Layout",
+      "width": 27,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaLagoSUD/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaLagoSUD/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_MIDDLE_SUD",
+      "name": "ViaFrancigenaMiddleSUD_Layout",
+      "width": 31,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaMiddleSUD/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaMiddleSUD/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_MIDDLE_NORD",
+      "name": "ViaFrancigenaMiddleNORD_Layout",
+      "width": 28,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaMiddleNORD/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaMiddleNORD/map.bin"
+    },
+    {
+      "id": "LAYOUT_VIA_FRANCIGENA_UP_HILLS",
+      "name": "ViaFrancigenaUpHills_Layout",
+      "width": 16,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ViaFrancigenaUpHills/border.bin",
+      "blockdata_filepath": "data/layouts/ViaFrancigenaUpHills/map.bin"
+    },
+    {
+      "id": "LAYOUT_GROTTA_FRANCIGENA_1F",
+      "name": "GrottaFrancigena_1F_Layout",
+      "width": 35,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GrottaFrancigena_1F/border.bin",
+      "blockdata_filepath": "data/layouts/GrottaFrancigena_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_GROTTA_FRANCIGENA_2F",
+      "name": "GrottaFrancigena_2F_Layout",
+      "width": 35,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GrottaFrancigena_2F/border.bin",
+      "blockdata_filepath": "data/layouts/GrottaFrancigena_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_INDOOR_VECCHIO_PIROMANE",
+      "name": "Indoor_Vecchio_Piromane_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/Indoor_Vecchio_Piromane/border.bin",
+      "blockdata_filepath": "data/layouts/Indoor_Vecchio_Piromane/map.bin"
+    },
+    {
+      "id": "LAYOUT_AUTOSTRADA",
+      "name": "Autostrada_Layout",
+      "width": 54,
+      "height": 100,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mauville",
+      "border_filepath": "data/layouts/Autostrada/border.bin",
+      "blockdata_filepath": "data/layouts/Autostrada/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAGO_WILD_AREA",
+      "name": "Lago_Wild_Area_Layout",
+      "width": 40,
+      "height": 53,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/Lago_Wild_Area/border.bin",
+      "blockdata_filepath": "data/layouts/Lago_Wild_Area/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAGO_WILD_AREA_BIKE",
+      "name": "Lago_Wild_Area_Bike_Layout",
+      "width": 12,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BikeShop",
+      "border_filepath": "data/layouts/Lago_Wild_Area_Bike/border.bin",
+      "blockdata_filepath": "data/layouts/Lago_Wild_Area_Bike/map.bin"
+    },
+    {
+      "id": "LAYOUT_GROTTA_FRANCIGENA_LAST_FLOOR",
+      "name": "Grotta_Francigena_Last_Floor_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Grotta_Francigena_Last_Floor/border.bin",
+      "blockdata_filepath": "data/layouts/Grotta_Francigena_Last_Floor/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMPO_GIZZI_CASA_MAVI",
+      "name": "CampoGizzi_CasaMavi_Layout",
+      "width": 35,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/CampoGizzi_CasaMavi/border.bin",
+      "blockdata_filepath": "data/layouts/CampoGizzi_CasaMavi/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMPO_GIZZI_MAVI_INDDOR",
+      "name": "CampoGizzi_Mavi_Inddor_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/CampoGizzi_Mavi_Inddor/border.bin",
+      "blockdata_filepath": "data/layouts/CampoGizzi_Mavi_Inddor/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMPO_GIZZY_MAVI_GYM",
+      "name": "CampoGizzyMaviGym_Layout",
+      "width": 13,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/CampoGizzyMaviGym/border.bin",
+      "blockdata_filepath": "data/layouts/CampoGizzyMaviGym/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMPO_GIZZI_CASA_SAMI",
+      "name": "CampoGizzi_Casa_Sami_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/CampoGizzi_Casa_Sami/border.bin",
+      "blockdata_filepath": "data/layouts/CampoGizzi_Casa_Sami/map.bin"
+    },
+    {
+      "id": "LAYOUT_CAMPO_GIZZI_SAMIGYM",
+      "name": "CampoGizziSamigym_Layout",
+      "width": 13,
+      "height": 13,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_EliteFour",
+      "border_filepath": "data/layouts/CampoGizziSamigym/border.bin",
+      "blockdata_filepath": "data/layouts/CampoGizziSamigym/map.bin"
     }
   ]
 }

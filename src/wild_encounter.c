@@ -22,7 +22,7 @@
 #include "constants/item.h"
 #include "constants/items.h"
 #include "constants/layouts.h"
-#include "constants/weather.h"
+#include "constants/weather.h" 
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -311,20 +311,52 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
     u8 max;
     u8 range;
     u8 rand;
+    u8 DIFFICULTY_LVL=VarGet(VAR_DIFFICULTY);
+    u8 NightmareMode=VarGet(VAR_NightmareMode);
+    u8 MaxAreaLv=VarGet(VAR_MAX_AREA_LEVEL);
+    
 
-    if (LURE_STEP_COUNT == 0)
+    u32 playerScaleLvl=0; //RD edit
+    u32 currentLvl=0;  //RD edit
+
+    for (u32 j = 0; j < PARTY_SIZE; j++) //RD edit
     {
+        if (GetMonData(&gPlayerParty[j], MON_DATA_SPECIES) != SPECIES_NONE)
+        {
+            currentLvl = GetMonData(&gPlayerParty[j], MON_DATA_LEVEL);
+            if (currentLvl > playerScaleLvl)
+                playerScaleLvl = currentLvl;
+        }
+    }
+
+   // if (LURE_STEP_COUNT == 0)
+    //{
         // Make sure minimum level is less than maximum level
-        if (wildPokemon[wildMonIndex].maxLevel >= wildPokemon[wildMonIndex].minLevel)
+        // if (wildPokemon[wildMonIndex].maxLevel >= wildPokemon[wildMonIndex].minLevel)
+        // {
+        //     min = wildPokemon[wildMonIndex].minLevel;
+        //     max = wildPokemon[wildMonIndex].maxLevel;
+        // }
+        // else
+        // {
+        //     min = wildPokemon[wildMonIndex].maxLevel;
+        //     max = wildPokemon[wildMonIndex].minLevel;
+        // }
+       
+       
+        if (DIFFICULTY_LVL==1)
         {
-            min = wildPokemon[wildMonIndex].minLevel;
-            max = wildPokemon[wildMonIndex].maxLevel;
-        }
-        else
+            max=playerScaleLvl;
+            min=playerScaleLvl-3;
+        }else if (DIFFICULTY_LVL==2)
         {
-            min = wildPokemon[wildMonIndex].maxLevel;
-            max = wildPokemon[wildMonIndex].minLevel;
+            max=playerScaleLvl+1;
+            min=playerScaleLvl-2;
+        }else{
+            max=playerScaleLvl-2;
+            min=playerScaleLvl-5;
         }
+        
         range = max - min + 1;
         rand = Random() % range;
 
@@ -341,17 +373,30 @@ static u8 ChooseWildMonLevel(const struct WildPokemon *wildPokemon, u8 wildMonIn
                     rand--;
             }
         }
-        return min + rand;
-    }
-    else
-    {
-        // Looks for the max level of all slots that share the same species as the selected slot.
-        max = GetMaxLevelOfSpeciesInWildTable(wildPokemon, wildPokemon[wildMonIndex].species, area);
-        if (max > 0)
-            return max + 1;
-        else // Failsafe
-            return wildPokemon[wildMonIndex].maxLevel + 1;
-    }
+        if (NightmareMode==1){
+            return 50 + (rand*10) +rand;
+        }else{
+            if ((min + rand)<=MaxAreaLv)
+            if((min + rand)<=2){
+                return 2;
+            }else{
+                return min + rand;
+            }
+
+            else{
+                return MaxAreaLv;
+            }
+        }
+    // }
+    // else
+    // {
+    //     // Looks for the max level of all slots that share the same species as the selected slot.
+    //     max = GetMaxLevelOfSpeciesInWildTable(wildPokemon, wildPokemon[wildMonIndex].species, area);
+    //     if (max > 0)
+    //         return max + 1;
+    //     else // Failsafe
+    //         return wildPokemon[wildMonIndex].maxLevel + 1;
+    // }
 }
 
 static u16 GetCurrentMapWildMonHeaderId(void)

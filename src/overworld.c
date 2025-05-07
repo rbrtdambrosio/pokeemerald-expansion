@@ -1614,6 +1614,7 @@ void CB2_NewGame(void)
     gFieldCallback2 = NULL;
     DoMapLoadLoop(&gMain.state);
     SetFieldVBlankCallback();
+  
     SetMainCallback1(CB1_Overworld);
     SetMainCallback2(CB2_Overworld);
 }
@@ -1648,6 +1649,7 @@ void CB2_LoadMap(void)
     FieldClearVBlankHBlankCallbacks();
     ScriptContext_Init();
     UnlockPlayerFieldControls();
+
     SetMainCallback1(NULL);
     SetMainCallback2(CB2_DoChangeMap);
     gMain.savedCallback = CB2_LoadMap2;

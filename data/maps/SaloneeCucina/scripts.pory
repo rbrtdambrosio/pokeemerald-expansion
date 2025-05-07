@@ -1,4 +1,11 @@
-mapscripts SaloneeCucina_MapScripts {}
+mapscripts SaloneeCucina_MapScripts {
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupSoggCucina
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF 
+
+}
+script 	HideMapNamePopupSoggCucina {
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
  
 
 script SaloneeCucina_EventScript_NeedPokemonTriggerLeft{
@@ -18,36 +25,179 @@ movement SaloneeCucina_Movement_PushPlayerBackFromDoor {
 }
 
 text Testo_per_uscire{
-    format("MOM: Aliiiiceeee?! Dove vai? Vieni qui un momento!")
+    format("PAOLA: Aliiiiceeee?! Dove vai? Vieni qui un momento!")
 }
 	 
 
 script SaloneeCucina_EventScript_Paola{
-    msgbox(Paola_text, MSGBOX_NPC)
+    if (var(VAR_LOGICA_CASA) ==0 || var(VAR_LOGICA_CASA) ==1){
+        msgbox(Paola_text, MSGBOX_NPC)
+        setvar(VAR_LOGICA_CASA,1)
+    }elif(var(VAR_LOGICA_CASA) ==2){
+         msgbox(Paola_text2, MSGBOX_NPC)
+         if(checkitem(ITEM_POTION)==0){ 
+            msgbox(Paola_text_pozione, MSGBOX_NPC)
+            giveitem(ITEM_POTION,1)
+            }
+         setvar(VAR_LOGICA_CASA,3)
+    }elif(var(VAR_LOGICA_CASA) ==3){
+         msgbox(Paola_text3, MSGBOX_NPC)
+         if(checkitem(ITEM_POTION)==0){ 
+            msgbox(Paola_text_pozione, MSGBOX_NPC)
+            giveitem(ITEM_POTION,1)
+            }
+         setvar(VAR_LOGICA_CASA,4)
+    }else{
+         msgbox(Paola_text4, MSGBOX_NPC)
+         call(givepotionifzero)
+
+         setvar(VAR_LOGICA_CASA,2)
+    }
+    closemessage
+
+}
+script   givepotionifzero{       
+    if(checkitem(ITEM_POTION)==0){ 
+            msgbox("Prendi questa pozione, ti sara' utile", MSGBOX_NPC)
+        giveitem(ITEM_POTION,1)
+    }
 }
 
 text Paola_text{
-   format("MOM: {PLAYER}! {PLAYER}! Visto che stai sennza fare nulla\p"
-   "Puoi portare uno dei cani a fare una passeggiata?")
+        format("PAOLA: {PLAYER}! {PLAYER}! Visto che stai senza fare nulla\p"
+        "Puoi portare uno dei cani a fare una passeggiata?")
+}
+text Paola_text2{
+        format("PAOLA: Mi ha chimato Mimma. Mi ha detto che Samantha e Mavi hanno deciso di entrare nella lega pokemon. Perche' non le vai a trovare? Pero' fai attenzione ai cinghiali!") 
+}
+text Paola_text3{
+        format("PAOLA:Mi raccomando non ti allontanare troppo che ci sono i cinghiali e ti si mangiano!") 
+}
+text Paola_text4{
+        format("PAOLA:Finisco di sistemare, la cucina, il salone, le scale, la cantina, la foffitta, il mondo e mi faccio quattro passi") 
+}
+text Paola_text_pozione{
+    format("PAOLA:Prendi questa POZIONE ti puo' essere utile") 
 }
  
+// ---------------------------  TOMMASO
+
+script SaloneeCucina_EventScript_Tommaso{
+    if (var(VAR_LOGICA_CASA) ==0||var(VAR_LOGICA_CASA) ==1){
+        msgbox(Tommaso_text, MSGBOX_NPC)
+    }elif(var(VAR_LOGICA_CASA) ==2){
+         msgbox(Tommaso_text2, MSGBOX_NPC)
+         if(checkitem(ITEM_POTION)==0){ 
+            msgbox(Paola_text_pozione, MSGBOX_NPC)
+            giveitem(ITEM_POTION,1)
+            }
+    }elif(var(VAR_LOGICA_CASA) ==3){
+         msgbox(Tommaso_text3, MSGBOX_NPC)
+         if(checkitem(ITEM_POTION)==0){ 
+            msgbox(Paola_text_pozione, MSGBOX_NPC)
+            giveitem(ITEM_POTION,1)
+            } 
+    }else{
+         msgbox(Tommaso_text4, MSGBOX_NPC) 
+         if(checkitem(ITEM_POTION)==0){ 
+            msgbox(Paola_text_pozione, MSGBOX_NPC)
+            giveitem(ITEM_POTION,1)
+            }
+    }
+    closemessage
+
+}
+
+text Tommaso_text{
+        format("TOMMASO: {PLAYER}! Vai a paralre con tua madre\p"
+        "Mi sa che voleva qualcosa.")
+}
+text Tommaso_text2{
+        format("TOMMASO:Ohi Ohi, che mal di pancia. Mi raccomando chiudi il cancello quando esci.") 
+}
+text Tommaso_text3{
+        format("TOMMASO: ohi Ohi Ohi, non ce la faccio piu.'") 
+}
+text Tommaso_text4{
+        format("TOMMASO: Oggi mi sento un po' meglio.\p" 
+        "Mi sa che tra un po' vado a fare una passeggiata.") 
+}
+ 
+
+
+
+
 script SaloneeCucina_EventScript_InteragisciMilla {
 	lockall
-    showmonpic(SPECIES_POOCHYENA,10,3)
-	msgbox(format("Porti Milla fuori per una passeggiata?"), MSGBOX_YESNO)
-        if (var(VAR_RESULT) != 1) {
-             msgbox("The Cerulean Gym's doors don't\n"
-               "open until morning.")
-             
-        }elif (var(VAR_RESULT) == 1) {
-             msgbox("La risposta e' 1")
-             givemon(SPECIES_POOCHYENA,50,ITEM_MASTER_BALL)
-             msgbox("Hai ricevuto Milla")
-             removeobject(2)
-             setflag(FLAG_UNUSED_0x493)
-             setflag(FLAG_SYS_POKEMON_GET)
-             
-        }
+    showmonpic(SPECIES_YAMPER,10,3)
+    if(var(VAR_LOGICA_CASA)==0){
+         msgbox(format("Milla, sei proprio bella!!"))
+         waitmessage
+    }else
+    {
+    if(flag(FLAG_SYS_POKEMON_GET)!=TRUE){
+        msgbox(format("Porti Milla fuori per una passeggiata?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) != 1) {
+                msgbox("Andiamo a vedere come sta Mina")
+                
+            }elif (var(VAR_RESULT) == 1) {
+                msgbox("Milla scelgo te!")
+                givemon(SPECIES_YAMPER,6)
+                special(ChangePokemonNickname_ROB_Milla)
+                msgbox("Hai ricevuto Milla")
+                waitmessage
+                removeobject(2)
+                setflag(FLAG_UNUSED_MILLAVIS)
+                setflag(FLAG_SYS_POKEMON_GET)
+                setvar(VAR_LOGICA_CASA,2)
+                setvar(VAR_CASA_ALICE_USCITA,1)
+                
+            }
+    }else{
+         msgbox(format("Ma quanto e' bella Milla?!"))
+         waitmessage
+    }
+     }
+    
+    hidemonpic
+    waitmessage
+	releaseall
+	end
+}
+
+
+script SaloneeCucina_EventScript_InteragisciMina {
+	lockall
+    showmonpic(SPECIES_YAMPER,10,3)
+    if(var(VAR_LOGICA_CASA)==0){
+         msgbox(format("Mina, sei proprio bella!!"))
+         waitmessage
+    } else
+    {
+    if(flag(FLAG_SYS_POKEMON_GET)!=TRUE){
+        msgbox(format("Porti Mina fuori per una passeggiata?"), MSGBOX_YESNO)
+            if (var(VAR_RESULT) != 1) {
+                msgbox("Andiamo a vedere come sta Milla")
+                
+            }elif (var(VAR_RESULT) == 1) {
+                msgbox("Mina scelgo te!")
+                givemon(SPECIES_YAMPER,5)
+                special(ChangePokemonNickname_ROB_Mina)
+                msgbox("Hai ricevuto Mina")
+                waitmessage
+                removeobject(3)
+                setflag(FLAG_UNUSED_MINAVIS)
+                setflag(FLAG_SYS_POKEMON_GET)
+                setvar(VAR_LOGICA_CASA,2)
+                setvar(VAR_CASA_ALICE_USCITA,1)
+                
+            }
+    }else{
+         msgbox(format("Ma quanto e' bella Mina?!"))
+         waitmessage
+    }
+    }
+   
     hidemonpic
     waitmessage
 	releaseall

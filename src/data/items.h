@@ -14079,18 +14079,32 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_TwiceSpicedRadish,
     },
 
-    [ITEM_POKESHI_DOLL] =
+    [ITEM_DIZIONARIO_ELFICO] =
     {
-        .name = _("Pokéshi Doll"),
-        .price = 2000,
+        .name = _("Dizionario Elfico"),
+        .price = 0,
         .description = COMPOUND_STRING(
-            "A wooden toy\n"
-            "resembling a Poké-.\n"
-            "mon. Can be sold."),
+            "Dizionario 'EI'\n"
+            "ELFICO-ITALIANO\n"
+            "utile ad ogni occasione."),
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_PokeshiDoll,
-        .iconPalette = gItemIconPalette_PokeshiDoll,
+        .iconPic = gItemIcon_OldSeaMap,
+        .iconPalette = gItemIconPalette_OldSeaMap,
     },
+    // [ITEM_DIZIONARIO_ELFICO] =
+    // {
+    //     .name = _("DIZIONARIO ELFICO"), 
+    //     .price = 0,
+    //     .description = COMPOUND_STRING(
+    //         "Il Dizionario EI\n"
+    //         "ELFICO-ITALIANO\n"
+    //         "utile ad ogni occasione."),
+    //     .pocket = POCKET_KEY_ITEMS,
+    //     .type = ITEM_USE_BAG_MENU,
+    //     .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+    //     .iconPic = gItemIcon_Parcel,
+    //     .iconPalette = gItemIconPalette_Parcel,
+    // },
 };

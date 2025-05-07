@@ -1,0 +1,132 @@
+{
+  "id": "MAP_VIA_FRANCIGENA_MIDDLE_NORD",
+  "name": "ViaFrancigenaMiddleNORD",
+  "layout": "LAYOUT_VIA_FRANCIGENA_MIDDLE_NORD",
+  "music": "MUS_DUMMY",
+  "region_map_section": "MAPSEC_VIA_FRANCIGENA_MIDDLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_VIA_FRANCIGENA_UP_HILLS",
+      "offset": -9,
+      "direction": "left"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO_NORD",
+      "offset": -7,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_TEMP_CASA_ALICE",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_MIDDLE_SUD",
+      "offset": 0,
+      "direction": "down"
+    },
+    {
+      "map": "MAP_VIA_FRANCIGENA_LAGO_SUD",
+      "offset": 31,
+      "direction": "down"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancEast_EventScript_postBattle",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POOCHYENA",
+      "x": 18,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 6,
+      "movement_range_y": 6,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "ViaFrancigenaMiddleNORD_EventScript_InteragisciJolly",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 21,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_TEST_GIARDINO_ALICE",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 22,
+      "y": 0,
+      "elevation": 0,
+      "dest_map": "MAP_TEST_GIARDINO_ALICE",
+      "dest_warp_id": "2"
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_INCONTRO_EMANUELE",
+      "var_value": "0",
+      "script": "ViaFrancEast_EventScript_incontro_emanuele_up"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_INCONTRO_EMANUELE",
+      "var_value": "0",
+      "script": "ViaFrancEast_EventScript_incontro_emanuele_down"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViaFrancigenaMiddleNORD_EventScript_Mirtilli"
+    },
+    {
+      "type": "sign",
+      "x": 18,
+      "y": 2,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViaFrancigenaMiddleNORD_Sign_Tip_3"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 10,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "ViaFrancigenaMiddleNORD_Sign_Tip_4"
+    }
+  ]
+}
