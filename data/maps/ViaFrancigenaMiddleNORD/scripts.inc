@@ -227,7 +227,7 @@ ViaFrancigenaMiddleNORD_Sign_Tip_4_Text_0:
 
 ViaFrancEast_EventScript_postBattle_Text_0:
 # 86 "data//maps/ViaFrancigenaMiddleNORD/scripts.pory"
-	.string "EMANUELE: sei a posto!$"
+	.string "EMANUELE: Hai gia tutte le pokeball cge ti servono. Se ne perdi qualcuna torna da me!$"
 
 ViaFrancEast_EventScript_postBattle_Text_1:
 # 89 "data//maps/ViaFrancigenaMiddleNORD/scripts.pory"

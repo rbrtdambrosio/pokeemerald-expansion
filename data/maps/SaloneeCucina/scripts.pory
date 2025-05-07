@@ -71,13 +71,13 @@ text Paola_text2{
         format("PAOLA: Mi ha chimato Mimma. Mi ha detto che Samantha e Mavi hanno deciso di entrare nella lega pokemon. Perche' non le vai a trovare? Pero' fai attenzione ai cinghiali!") 
 }
 text Paola_text3{
-        format("PAOLA:Mi raccomando non ti allontanare troppo che ci sono i cinghiali e ti si mangiano!") 
+        format("PAOLA: Mi raccomando non ti allontanare troppo che ci sono i cinghiali e ti si mangiano!") 
 }
 text Paola_text4{
-        format("PAOLA:Finisco di sistemare, la cucina, il salone, le scale, la cantina, la foffitta, il mondo e mi faccio quattro passi") 
+        format("PAOLA: Finisco di sistemare, la cucina, il salone, le scale, la cantina, la foffitta, il mondo e mi faccio quattro passi") 
 }
 text Paola_text_pozione{
-    format("PAOLA:Prendi questa POZIONE ti puo' essere utile") 
+    format("Prendi questa POZIONE ti puo' essere utile") 
 }
  
 // ---------------------------  TOMMASO
@@ -113,7 +113,7 @@ text Tommaso_text{
         "Mi sa che voleva qualcosa.")
 }
 text Tommaso_text2{
-        format("TOMMASO:Ohi Ohi, che mal di pancia. Mi raccomando chiudi il cancello quando esci.") 
+        format("TOMMASO: Ohi Ohi, che mal di pancia. Mi raccomando chiudi il cancello quando esci.") 
 }
 text Tommaso_text3{
         format("TOMMASO: ohi Ohi Ohi, non ce la faccio piu.'") 

@@ -64,6 +64,7 @@ if(var(VAR_RESULT)>1){
 				}
 
 			}
+		closemessage
 		releaseall
 	 
 }
@@ -150,12 +151,14 @@ format("GIADA: Nooooo ho perso!")
 script Lago_Wild_Area_EventScript_Ciro{
         if(checkitem(ITEM_BIKE_VOUCHER)){
 	msgbox(format("CIRO: Ho proprio voglia di correre. Una corsetta da qui in Norvegia penso possa andare bene"), MSGBOX_NPC)
-	closemessage
+ 
         }else{
-          	msgbox(format("CIRO: Ciao Alice, mi sto scaldando. Oggi corro solo millemila chilometri. Ah! a proposito non e' che ti puoi prendere cura della mia bici. L'ho lasciata nelle mani del vecchio scorbutico, ma non mi fido"), MSGBOX_NPC)
-	closemessage
+          	msgbox(format("CIRO: Ciao Alice, mi sto scaldando.\p"
+			"Oggi corro solo millemila chilometri. Ah! a proposito non e' che ti puoi prendere cura della mia bici. L'ho lasciata nelle mani del vecchio scorbutico, ma non mi fido"), MSGBOX_NPC)
+ 
         giveitem(ITEM_BIKE_VOUCHER)      
         }
+	closemessage	
 	
 }
 

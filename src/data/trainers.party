@@ -117,11 +117,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Jigglypuff
-Level: 1
+Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 TOGEPI
-Level: 1
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_3 ===
@@ -8519,16 +8519,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Smeargle
-Level: 8
+Level: 9
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Gloom
-Level: 8
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 10
+IVs: 1 HP / 0 Atk / 1 Def / 0 SpA / 1 SpD / 0 Spe
 
 Roselia
-Level: 9
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 10
+IVs: 1 HP / 1 Atk / 0 Def / 0 SpA / 1 SpD / 0 Spe
 
 === TRAINER_BECKY ===
 Name: BECKY
@@ -10224,11 +10224,11 @@ AI: Basic Trainer
 
 Tauros
 Level: 8
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 1 HP / 0 Atk / 1 Def / 0 SpA / 1 SpD / 0 Spe
 
 Scyther
 Level: 8
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+IVs: 0 HP / 1 Atk / 0 Def / 1 SpA / 0 SpD / 1 Spe
 
 === TRAINER_LORENZO ===
 Name: LORENZO
@@ -10336,13 +10336,13 @@ Items: Full Restore
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Force Setup First Turn
 
-Gloom
-Level: 8
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Kangaskhan
+Level: 10
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 0 SpD / 0 Spe
 
-Roselia
-Level: 8
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Lotad
+Level: 9
+IVs: 1 HP / 1 Atk / 0 Def / 1 SpA / 0 SpD / 1 Spe
 
 === TRAINER_JENNA ===
 Name: JENNA
@@ -12910,21 +12910,21 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Magikarp
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Gyarados
+Level: 13
+IVs: 0 HP / 1 Atk / 1 Def / 1 SpA / 0 SpD / 0 Spe
 
-Tentacool
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Tentacruel
+Level: 13
+IVs: 1 HP / 1 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Feebas
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 15
+IVs: 4 HP / 4 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Carvanha
-Level: 10
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 15
+IVs: 0 HP /4 Atk / 1 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAWSON ===
 Name: MATTIA
@@ -12936,12 +12936,12 @@ Double Battle: No
 AI: Check Bad Move
 
 Mr_mime
-Level: 15
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 18
+IVs: 5 HP / 0 Atk / 5 Def / 0 SpA / 1 SpD / 0 Spe
 
 Scyther
-Level: 16
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 19
+IVs: 0 HP / 5 Atk / 5 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SARAH ===
 Name: SARAH

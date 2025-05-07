@@ -23,21 +23,22 @@ script GuardiaForestale_bikeroad{
 }
 
 script temp_trigger {
-    msgbox(format("triggering temp_trigger"),MSGBOX_DEFAULT)
+   // msgbox(format("triggering temp_trigger"),MSGBOX_DEFAULT)
 
     if(flag(FLAG_SYS_CYCLING_ROAD)){
-         msgbox(format("FLAG_SYS_CYCLING_ROAD is TRUE. non si puo scendere dalla bici: setto la flag a FALSE"),MSGBOX_DEFAULT)
+       //  msgbox(format("FLAG_SYS_CYCLING_ROAD is TRUE. non si puo scendere dalla bici: setto la flag a FALSE"),MSGBOX_DEFAULT)
         clearflag(FLAG_SYS_CYCLING_ROAD)
         applymovement(OBJ_EVENT_ID_PLAYER,script_mov_cycledown)
 
     }elif(flag(FLAG_SYS_CYCLING_ROAD)==FALSE){
-         msgbox(format("FLAG_SYS_CYCLING_ROAD is FALSE, controllo il player"),MSGBOX_DEFAULT)
+         //msgbox(format("FLAG_SYS_CYCLING_ROAD is FALSE, controllo il player"),MSGBOX_DEFAULT)
         specialvar(VAR_RESULT, GetPlayerAvatarBike)
         if (var(VAR_RESULT)==0){
-            msgbox(format("Fplayer non sulla bici"),MSGBOX_DEFAULT)
+           msgbox(format("Mi serve una bicicletta"),MSGBOX_DEFAULT)
+
             call(Route110_SeasideCyclingRoadSouthEntrance_EventScript_NoBike)
         }elif(var(VAR_RESULT)==1){
-               msgbox(format("Player  sulla bici setting FLAG_SYS_CYCLING_ROAD to true "),MSGBOX_DEFAULT)
+              // msgbox(format("Player  sulla bici setting FLAG_SYS_CYCLING_ROAD to true "),MSGBOX_DEFAULT)
                setflag(FLAG_SYS_CYCLING_ROAD)
                applymovement(OBJ_EVENT_ID_PLAYER,script_mov_cycleup)
         }

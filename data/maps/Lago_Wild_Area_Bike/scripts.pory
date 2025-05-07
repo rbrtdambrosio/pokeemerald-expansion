@@ -8,15 +8,23 @@ script 	HideMapNameLagobike{
 }
 
 script Lago_Wild_Area_Bike_Store_EventScript_OldMan{
-		   if(checkitem(ITEM_BIKE_VOUCHER)){
-			msgbox(format("VECCHIO SCORBUTICO: Ahhh sei un'amica di Ciro. Bene Bene, prendi questa bici e togliti dalle palle. "), MSGBOX_NPC)
-	closemessage
-	giveitem(ITEM_ACRO_BIKE)
-	   }else{
-	msgbox(format("VECCHIO SCORBUTICO: Oggi e' ghiornata. Prima quell'arabo mo chiss. Togliti dalle palle "), MSGBOX_NPC)
-	closemessage
-	   }
+	if (checkitem(ITEM_ACRO_BIKE)){
+		msgbox(format("VECCHIO SCORBUTICO: Ess chess. Ancora? Fuori dai coglioni su..."), MSGBOX_NPC)
+	 
+	}
+	else{
+		if(checkitem(ITEM_BIKE_VOUCHER))
+		{
+			msgbox(format("VECCHIO SCORBUTICO: Ahhh sei un'amica di Ciro. Bene Bene... non me ne frega un cazzo! Prendi questa bici e togliti dalle palle. "), MSGBOX_NPC)
+		
+			giveitem(ITEM_ACRO_BIKE)
+		}else
+		{
+			msgbox(format("VECCHIO SCORBUTICO: Oggi e' ghiornata. Prima quell'arabo mo chess. Togliti dalle palle "), MSGBOX_NPC)
 
+		}
+	}
+	closemessage
 
 }
 

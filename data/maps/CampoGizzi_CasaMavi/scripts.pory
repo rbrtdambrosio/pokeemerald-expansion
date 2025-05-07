@@ -11,10 +11,13 @@ script 	HideMapNamePopupUpCampoG{
  
 script MechanicGym_Sign {
 	msgbox(format("MACHANIC GYM \p""Vi ripariamo le macchine e vi facciamo un culo cosi' con i pokemon\p""Warning: la DLC gym non e' ancora disponibile"),MSGBOX_DEFAULT)
-
+closemessage
 }
+script CampoGizzi_Mirtilli_sign {
  
-
+  msgbox(format("Tip: Ricordati di guarire i tuoi pokemon usando i mirtilli. Se sarai sconfitta, ricomncerai dal pumto dove hai mangiato i mirtilli"))
+  closemessage
+}
  script CampoGizzi_CasaMaviEventScript_Mirtilli{
     lockall
     specialvar(VAR_RESULT,CheckPartyFullHealed)
@@ -26,6 +29,7 @@ script MechanicGym_Sign {
         special(HealPlayerParty)
         setrespawn(HEAL_LOCATION_CampoGizzi_Mirtilli)
    }
+   closemessage
    	releaseall
 
 }

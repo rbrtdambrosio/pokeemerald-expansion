@@ -106,6 +106,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "CampoGizzi_CasaMaviEventScript_Mirtilli"
+    },
+    {
+      "type": "sign",
+      "x": 29,
+      "y": 18,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "CampoGizzi_Mirtilli_sign"
     }
   ]
 }
