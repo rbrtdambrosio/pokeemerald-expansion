@@ -10,7 +10,7 @@ script 	HideMapNamePopupLagoSUD{
 
 
 script ViaFrancigenaLagoSUD_sign_Tip6{
-    msgbox(format("Tip 6: Alcuni tuoi amici sono dei veri appassionati di pokemon. Se non riesci a batterli ora, riprova quando sarai piu' forte"))
+    msgbox(format("Tip 7: Alcuni tuoi amici sono dei veri appassionati di pokemon. Se non riesci a batterli ora, riprova quando sarai piu' forte"))
 closemessage
 }
 

@@ -218,7 +218,8 @@ ViaFrancigenaMiddleNORD_Sign_Tip_3_Text_0:
 # 16 "data//maps/ViaFrancigenaMiddleNORD/scripts.pory"
 	.string "Tip 3: I mirtilli sono una panacea, ed\n"
 	.string "anche uno dei pochi modi per curare il\l"
-	.string "tuo party. Fanne buon uso.$"
+	.string "tuo party e se vieni sconfitta\l"
+	.string "ripartirai da qui. Fanne buon uso.$"
 
 ViaFrancigenaMiddleNORD_Sign_Tip_4_Text_0:
 # 21 "data//maps/ViaFrancigenaMiddleNORD/scripts.pory"

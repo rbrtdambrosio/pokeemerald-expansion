@@ -12,6 +12,12 @@ script ViaFrancigenaLagoNord_Sign_Tip5{
     msgbox(format("Tip 5: Se il gioco ti sembra troppo facile, prova a leggere un libro in camera tua!"))
 closemessage
 }
+script ViaFrancigenaLagoNord_Sign_Tip6
+{
+        msgbox(format("Tip 6: Nell'erba alta ci sono Pokemon comuni, ma ci sono anche pokemon molto rari, cerca bene!"))
+        closemessage
+
+}
  
 
 //VAR_ZIO_PESCATORE conytrolla le interazioni con lo zio.

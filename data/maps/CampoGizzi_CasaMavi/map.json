@@ -20,14 +20,14 @@
     },
     {
       "map": "MAP_CAMPO_GIZZI_CASA_SAMI",
-      "offset": -5,
+      "offset": -1,
       "direction": "up"
     }
   ],
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
-      "x": 24,
+      "x": 28,
       "y": 13,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
@@ -40,7 +40,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_BOY_3",
-      "x": 17,
+      "x": 20,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
@@ -53,7 +53,7 @@
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING",
-      "x": 19,
+      "x": 23,
       "y": 18,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
@@ -65,22 +65,48 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M",
-      "x": 7,
-      "y": 9,
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "x": 16,
+      "y": 16,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_WANDER_DOWN_AND_UP",
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
       "movement_range_x": 0,
-      "movement_range_y": 4,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "CampoGizzi_EventScript_Camilla",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NOLAND",
+      "x": 10,
+      "y": 8,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "6",
+      "script": "CampoGizzi_EventScript_Ricc",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKE_BALL",
+      "x": 6,
+      "y": 19,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CampoGizzi_EventScript_Vez",
+      "script": "campogizziPokeball",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 24,
+      "x": 28,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_CAMPO_GIZZI_MAVI_INDDOR",
@@ -93,7 +119,7 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 30,
+      "x": 34,
       "y": 23,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -101,7 +127,7 @@
     },
     {
       "type": "sign",
-      "x": 28,
+      "x": 32,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
@@ -109,7 +135,7 @@
     },
     {
       "type": "sign",
-      "x": 29,
+      "x": 33,
       "y": 18,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",

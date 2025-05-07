@@ -1,0 +1,29 @@
+mapscripts CampoGizzi_Casa_Sami_MapScripts {
+
+MAP_SCRIPT_ON_TRANSITION: HideMapNamePopupUpCampoGSam
+MAP_SCRIPT_ON_RESUME: NightmareModeOFF
+MAP_SCRIPT_ON_RESUME: Script_MaxLv30
+
+}
+script 	HideMapNamePopupUpCampoGSam{
+	setflag(FLAG_HIDE_MAP_NAME_POPUP)
+}
+   
+
+
+script CampoGizzi_EventScript_Vez{
+
+	trainerbattle_single(TRAINER_KALEB, Battle_Text_Vez,after_Battle_Text_Vez)
+	msgbox(format("Vez: Uff Oggi ho fatto solo il giro del mondo 1 volta... meglio impegnarsi di piu'"), MSGBOX_NPC)
+	closemessage
+
+	
+}
+text 	Battle_Text_Vez{
+format("VEZ: Bella vez; soc ma bell! ")
+
+}
+text after_Battle_Text_Vez{
+format("VEZ: NNNNOOOOO soc ma bell! ")
+	
+}

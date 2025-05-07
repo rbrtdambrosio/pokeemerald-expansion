@@ -31,6 +31,11 @@ script Script_MaxLv25{
 setvar(VAR_MAX_AREA_LEVEL,25)
 }
 
+script Script_MaxLv30{
+setvar(VAR_MAX_AREA_LEVEL,30)
+}
+
+
 //script GiveBackPokeball{
 	//if (var(VAR_NUM_POKEBALL)< PARTY_SIZE-1){
 	//	giveitem(ITEM_POKE_BALL)

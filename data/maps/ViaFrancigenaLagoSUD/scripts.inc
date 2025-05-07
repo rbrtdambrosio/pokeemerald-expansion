@@ -73,7 +73,7 @@ battaglia_mariaCristina::
 
 ViaFrancigenaLagoSUD_sign_Tip6_Text_0:
 # 13 "data//maps/ViaFrancigenaLagoSUD/scripts.pory"
-	.string "Tip 6: Alcuni tuoi amici sono dei veri\n"
+	.string "Tip 7: Alcuni tuoi amici sono dei veri\n"
 	.string "appassionati di pokemon. Se non riesci a\l"
 	.string "batterli ora, riprova quando sarai piu'\l"
 	.string "forte$"

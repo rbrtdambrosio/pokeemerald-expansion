@@ -4614,7 +4614,7 @@
     {
       "id": "LAYOUT_CAMPO_GIZZI_CASA_MAVI",
       "name": "CampoGizzi_CasaMavi_Layout",
-      "width": 35,
+      "width": 39,
       "height": 30,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",

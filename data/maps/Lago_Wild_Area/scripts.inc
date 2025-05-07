@@ -161,26 +161,40 @@ Lago_Wild_Area_EventScript_Chris::
 	return
 
 
-Lago_Wild_Area_EventScript_Giada::
-# 126 "data//maps/Lago_Wild_Area/scripts.pory"
-	trainerbattle_single TRAINER_HEIDI, Battle_Text_Lago_Giada, after_Battle_Text_Lago_Giada
+PinguinoPokeball::
 # 127 "data//maps/Lago_Wild_Area/scripts.pory"
-	goto_if_set FLAG_POKE_BALL_GIADA, Lago_Wild_Area_EventScript_Giada_2
-# 131 "data//maps/Lago_Wild_Area/scripts.pory"
-	msgbox Lago_Wild_Area_EventScript_Giada_Text_1, MSGBOX_NPC
-# 132 "data//maps/Lago_Wild_Area/scripts.pory"
+	lockall
+# 128 "data//maps/Lago_Wild_Area/scripts.pory"
 	giveitem ITEM_POKE_BALL
-# 133 "data//maps/Lago_Wild_Area/scripts.pory"
+# 129 "data//maps/Lago_Wild_Area/scripts.pory"
+	removeobject 9
+# 130 "data//maps/Lago_Wild_Area/scripts.pory"
+	addvar VAR_NUM_POKEBALL, 1
+# 131 "data//maps/Lago_Wild_Area/scripts.pory"
+	releaseall
+	return
+
+
+Lago_Wild_Area_EventScript_Giada::
+# 136 "data//maps/Lago_Wild_Area/scripts.pory"
+	trainerbattle_single TRAINER_HEIDI, Battle_Text_Lago_Giada, after_Battle_Text_Lago_Giada
+# 137 "data//maps/Lago_Wild_Area/scripts.pory"
+	goto_if_set FLAG_POKE_BALL_GIADA, Lago_Wild_Area_EventScript_Giada_2
+# 141 "data//maps/Lago_Wild_Area/scripts.pory"
+	msgbox Lago_Wild_Area_EventScript_Giada_Text_1, MSGBOX_NPC
+# 142 "data//maps/Lago_Wild_Area/scripts.pory"
+	giveitem ITEM_POKE_BALL
+# 143 "data//maps/Lago_Wild_Area/scripts.pory"
 	setflag FLAG_POKE_BALL_GIADA
-# 134 "data//maps/Lago_Wild_Area/scripts.pory"
+# 144 "data//maps/Lago_Wild_Area/scripts.pory"
 	addvar VAR_NUM_POKEBALL, 1
 Lago_Wild_Area_EventScript_Giada_1:
-# 137 "data//maps/Lago_Wild_Area/scripts.pory"
+# 147 "data//maps/Lago_Wild_Area/scripts.pory"
 	closemessage
 	return
 
 Lago_Wild_Area_EventScript_Giada_2:
-# 128 "data//maps/Lago_Wild_Area/scripts.pory"
+# 138 "data//maps/Lago_Wild_Area/scripts.pory"
 	msgbox Lago_Wild_Area_EventScript_Giada_Text_0, MSGBOX_NPC
 	goto Lago_Wild_Area_EventScript_Giada_1
 
@@ -190,17 +204,17 @@ Lago_Wild_Area_EventScript_Ciro::
 # 0 "data//maps/Lago_Wild_Area/scripts.pory"
 	compare VAR_RESULT, 0
 	goto_if_ne Lago_Wild_Area_EventScript_Ciro_2
-# 156 "data//maps/Lago_Wild_Area/scripts.pory"
+# 166 "data//maps/Lago_Wild_Area/scripts.pory"
 	msgbox Lago_Wild_Area_EventScript_Ciro_Text_1, MSGBOX_NPC
-# 159 "data//maps/Lago_Wild_Area/scripts.pory"
+# 169 "data//maps/Lago_Wild_Area/scripts.pory"
 	giveitem ITEM_BIKE_VOUCHER
 Lago_Wild_Area_EventScript_Ciro_1:
-# 161 "data//maps/Lago_Wild_Area/scripts.pory"
+# 171 "data//maps/Lago_Wild_Area/scripts.pory"
 	closemessage
 	return
 
 Lago_Wild_Area_EventScript_Ciro_2:
-# 153 "data//maps/Lago_Wild_Area/scripts.pory"
+# 163 "data//maps/Lago_Wild_Area/scripts.pory"
 	msgbox Lago_Wild_Area_EventScript_Ciro_Text_0, MSGBOX_NPC
 	goto Lago_Wild_Area_EventScript_Ciro_1
 
@@ -277,25 +291,25 @@ Lago_Wild_Area_EventScript_Chris_Text_0:
 	.string "lago ma mai un lago dall'uomo$"
 
 Lago_Wild_Area_EventScript_Giada_Text_0:
-# 128 "data//maps/Lago_Wild_Area/scripts.pory"
+# 138 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "GIADA: C’est vraiment une belle journée.\n"
 	.string "Ce serait l’idéal d’avoir un vélo pour\l"
 	.string "faire une belle balade. J’ai vu Ciro\l"
 	.string "passer à vélo comme une fusée !!$"
 
 Lago_Wild_Area_EventScript_Giada_Text_1:
-# 131 "data//maps/Lago_Wild_Area/scripts.pory"
+# 141 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "Visto che mi hai battuta ti regalo\n"
 	.string "questa$"
 
 Lago_Wild_Area_EventScript_Ciro_Text_0:
-# 153 "data//maps/Lago_Wild_Area/scripts.pory"
+# 163 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "CIRO: Ho proprio voglia di correre. Una\n"
 	.string "corsetta da qui in Norvegia penso possa\l"
 	.string "andare bene$"
 
 Lago_Wild_Area_EventScript_Ciro_Text_1:
-# 156 "data//maps/Lago_Wild_Area/scripts.pory"
+# 166 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "CIRO: Ciao Alice, mi sto scaldando.\p"
 	.string "Oggi corro solo millemila chilometri. Ah!\n"
 	.string "a proposito non e' che ti puoi prendere\l"
@@ -334,7 +348,7 @@ after_Battle_Text_Lago_Chris::
 	.string "PINGUINO: Niente olio questa volta$"
 
 Battle_Text_Lago_Giada::
-# 142 "data//maps/Lago_Wild_Area/scripts.pory"
+# 152 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "GIADA:Coucou Alice, comment ça va ?\n"
 	.string "Regarde-moi ce soleil de fou !!!!! Je me\l"
 	.string "régale dans la nature ! La tour Eiffel,\l"
@@ -342,5 +356,5 @@ Battle_Text_Lago_Giada::
 	.string "vuoi mette Posta Fibreno ?$"
 
 after_Battle_Text_Lago_Giada::
-# 147 "data//maps/Lago_Wild_Area/scripts.pory"
+# 157 "data//maps/Lago_Wild_Area/scripts.pory"
 	.string "GIADA: Nooooo ho perso!$"

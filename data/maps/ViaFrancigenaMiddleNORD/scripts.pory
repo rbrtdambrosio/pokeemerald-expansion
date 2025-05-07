@@ -13,7 +13,7 @@ script 	HideMapNamePopupMiddleNord{
 	
 
   script ViaFrancigenaMiddleNORD_Sign_Tip_3{
-     msgbox(format("Tip 3: I mirtilli sono una panacea, ed anche uno dei pochi modi per curare il tuo party. Fanne buon uso."))
+     msgbox(format("Tip 3: I mirtilli sono una panacea, ed anche uno dei pochi modi per curare il tuo party e se vieni sconfitta ripartirai da qui. Fanne buon uso."))
   closemessage
   }
 

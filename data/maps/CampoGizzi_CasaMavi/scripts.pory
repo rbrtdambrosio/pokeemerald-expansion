@@ -34,8 +34,19 @@ script CampoGizzi_Mirtilli_sign {
 
 }
  
-	
-
+ 
+script campogizziPokeball{
+		lockall
+		giveitem(ITEM_POKE_BALL) 
+		removeobject(6)  
+ 
+ 
+		addvar(VAR_NUM_POKEBALL,1)
+ 
+ 
+ 
+   releaseall
+}
  
 script CampoGizzi_EventScript_Mattia{
 
@@ -74,19 +85,43 @@ script CampoGizzi_Donato{
 }
 
 
-script CampoGizzi_EventScript_Vez{
 
-	trainerbattle_single(TRAINER_KALEB, Battle_Text_Mattia,after_Battle_Text_Mattia)
-	msgbox(format("Vez: Uff Oggi ho fatto solo il giro del mondo 1 volta... meglio impegnarsi di piu'"), MSGBOX_NPC)
+
+
+script CampoGizzi_EventScript_Camilla{
+
+	msgbox(format("CAMI: Ciao Ali, come sembro una vecchia?! Ho solo messo i miei vestiti preferiti!!!\p"
+	"Che ci faccoiamo qui? Riccardo ha sentito che Sami e Mavi sono diventate allenatrici di Pokemo.\p"
+	"E' venuto a sfidarle!"), MSGBOX_NPC)
+	trainerbattle_single(TRAINER_ROXANNE_2, Battle_Text_Mattia,after_Battle_Text_Mattia)
+
 	closemessage
 
 	
 }
-text 	Battle_Text_Vez{
-format("VEZ: Bella vez; soc ma bell! ")
+text 	Battle_Text_Camilla{
+format("CAMI: Se ti batto dovrai vestirti come me! ")
 
 }
-text after_Battle_Text_Vez{
-format("VEZ: NNNNOOOOO soc ma bell! ")
+text after_Battle_Text_Camilla{
+format("CAMI: Vabbe' non avrai mai vestiti alla moda come i miei! ")
+	
+}
+
+
+script CampoGizzi_EventScript_Ricc{
+
+	msgbox(format("RICC: Aliiiii pure qua ti trovo! E' una maledizione."), MSGBOX_NPC)
+	trainerbattle_single(TRAINER_NOLAND, Battle_Text_Ricc,after_Battle_Text_Ricc)
+	closemessage
+
+	
+}
+text 	Battle_Text_Ricc{
+format("RICC: Ti batto con il mio stile! ")
+
+}
+text after_Battle_Text_Ricc{
+format("RICC: Porco due porco! Battuto da Alice! La mia carriera e' finita")
 	
 }

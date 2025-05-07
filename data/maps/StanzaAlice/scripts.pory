@@ -12,18 +12,7 @@ script 	HideMapNamePopup{
 }
 
 
-script temp_bike{
-	giveitem(ITEM_ACRO_BIKE)
-	checkplayergender
-	if(var(VAR_RESULT)==FEMALE){
-		msgbox(format("FEMMINA"), MSGBOX_DEFAULT)
-	
-	}elif(var(VAR_RESULT)==MALE){
-		msgbox(format("Machio"), MSGBOX_DEFAULT)
-	
-	}
-	closemessage
-}
+ 
 
 
 script StanzaAlice_On_Load{

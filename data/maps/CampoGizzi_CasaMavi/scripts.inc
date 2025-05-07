@@ -65,53 +65,77 @@ CampoGizzi_CasaMaviEventScript_Mirtilli_3:
 	goto CampoGizzi_CasaMaviEventScript_Mirtilli_1
 
 
-CampoGizzi_EventScript_Mattia::
-# 42 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	trainerbattle_single TRAINER_DAWSON, Battle_Text_Mattia, after_Battle_Text_Mattia
-# 43 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	msgbox CampoGizzi_EventScript_Mattia_Text_0, MSGBOX_NPC
+campogizziPokeball::
+# 39 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	lockall
+# 40 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	giveitem ITEM_POKE_BALL
+# 41 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	removeobject 6
 # 44 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	addvar VAR_NUM_POKEBALL, 1
+# 48 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	releaseall
+	return
+
+
+CampoGizzi_EventScript_Mattia::
+# 53 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	trainerbattle_single TRAINER_DAWSON, Battle_Text_Mattia, after_Battle_Text_Mattia
+# 54 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	msgbox CampoGizzi_EventScript_Mattia_Text_0, MSGBOX_NPC
+# 55 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	closemessage
 	return
 
 
 CampoGizzi_EventScript_Emanuele::
-# 58 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 69 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	msgbox CampoGizzi_EventScript_Emanuele_Text_0, MSGBOX_NPC
-# 59 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 70 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	closemessage
-# 60 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 71 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	call ViaFrancEast_EventScript_postBattle
 	return
 
 
 CampoGizzi_Donato::
-# 65 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 76 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	lockall
-# 66 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 77 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	specialvar VAR_RESULT, CalculatePlayerPartyCount
-# 67 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 78 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	compare VAR_RESULT, 1
 	goto_if_gt CampoGizzi_Donato_2
 CampoGizzi_Donato_1:
-# 71 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 82 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	msgbox CampoGizzi_Donato_Text_0, MSGBOX_NPC
-# 72 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 83 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	closemessage
 	return
 
 CampoGizzi_Donato_2:
-# 68 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 79 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	call cancelpokemonservice
 	goto CampoGizzi_Donato_1
 
 
-CampoGizzi_EventScript_Vez::
-# 79 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	trainerbattle_single TRAINER_KALEB, Battle_Text_Mattia, after_Battle_Text_Mattia
-# 80 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	msgbox CampoGizzi_EventScript_Vez_Text_0, MSGBOX_NPC
-# 81 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+CampoGizzi_EventScript_Camilla::
+# 93 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	msgbox CampoGizzi_EventScript_Camilla_Text_0, MSGBOX_NPC
+# 96 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	trainerbattle_single TRAINER_ROXANNE_2, Battle_Text_Mattia, after_Battle_Text_Mattia
+# 98 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	closemessage
+	return
+
+
+CampoGizzi_EventScript_Ricc::
+# 114 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	msgbox CampoGizzi_EventScript_Ricc_Text_0, MSGBOX_NPC
+# 115 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	trainerbattle_single TRAINER_NOLAND, Battle_Text_Ricc, after_Battle_Text_Ricc
+# 116 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	closemessage
 	return
 
@@ -145,38 +169,59 @@ CampoGizzi_CasaMaviEventScript_Mirtilli_Text_2:
 	.string "I tuoi Pokemon sono guariti$"
 
 CampoGizzi_EventScript_Mattia_Text_0:
-# 43 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 54 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	.string "MATTIA: Mavi ti sta aspettando dentro,\n"
 	.string "stai attenta, e' molto piu' forte di me!$"
 
 CampoGizzi_EventScript_Emanuele_Text_0:
-# 58 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 69 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	.string "EMANUELE: L'aria di campo Gizzi e'\n"
 	.string "fantastica.$"
 
 CampoGizzi_Donato_Text_0:
-# 71 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 82 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	.string "DONATO: Chissa se qui a campo gizzi\n"
 	.string "fanno gli arrosticini$"
 
-CampoGizzi_EventScript_Vez_Text_0:
-# 80 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	.string "Vez: Uff Oggi ho fatto solo il giro del\n"
-	.string "mondo 1 volta... meglio impegnarsi di piu'$"
+CampoGizzi_EventScript_Camilla_Text_0:
+# 93 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "CAMI: Ciao Ali, come sembro una\n"
+	.string "vecchia?! Ho solo messo i miei vestiti\l"
+	.string "preferiti!!!\p"
+	.string "Che ci faccoiamo qui? Riccardo ha\n"
+	.string "sentito che Sami e Mavi sono diventate\l"
+	.string "allenatrici di Pokemo.\p"
+	.string "E' venuto a sfidarle!$"
+
+CampoGizzi_EventScript_Ricc_Text_0:
+# 114 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "RICC: Aliiiii pure qua ti trovo! E' una\n"
+	.string "maledizione.$"
 
 Battle_Text_Mattia::
-# 48 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 59 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	.string "MATTIA: BWHAHWAHAHWAHA affronta il\n"
 	.string "miglior neurochirurgo di campo Gizzi!$"
 
 after_Battle_Text_Mattia::
-# 52 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+# 63 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
 	.string "MATTIA: BAHWHAWHAHWHA - ho perso!$"
 
-Battle_Text_Vez::
-# 85 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	.string "VEZ: Bella vez; soc ma bell!$"
+Battle_Text_Camilla::
+# 102 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "CAMI: Se ti batto dovrai vestirti come\n"
+	.string "me!$"
 
-after_Battle_Text_Vez::
-# 89 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
-	.string "VEZ: NNNNOOOOO soc ma bell!$"
+after_Battle_Text_Camilla::
+# 106 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "CAMI: Vabbe' non avrai mai vestiti alla\n"
+	.string "moda come i miei!$"
+
+Battle_Text_Ricc::
+# 120 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "RICC: Ti batto con il mio stile!$"
+
+after_Battle_Text_Ricc::
+# 124 "data//maps/CampoGizzi_CasaMavi/scripts.pory"
+	.string "RICC: Porco due porco! Battuto da\n"
+	.string "Alice! La mia carriera e' finita$"

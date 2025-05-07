@@ -6605,12 +6605,12 @@ Voltorb
 Level: 14
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
-Voltorb
-Level: 14
+Raichu
+Level: 15
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 
 Magnemite
-Level: 16
+Level: 17
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_ANTHONY ===
@@ -6721,15 +6721,15 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Magnemite
+Crobat
 Level: 14
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Magnemite
-Level: 14
+Electabuzz
+Level: 15
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 
-Voltorb
+Flaaffy
 Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -10222,12 +10222,12 @@ Items: Full Restore
 Double Battle: No
 AI: Basic Trainer
 
-Tauros
-Level: 8
+Bulbasaur
+Level: 10
 IVs: 1 HP / 0 Atk / 1 Def / 0 SpA / 1 SpD / 0 Spe
 
-Scyther
-Level: 8
+Tangela
+Level: 9
 IVs: 0 HP / 1 Atk / 0 Def / 1 SpA / 0 SpD / 1 Spe
 
 === TRAINER_LORENZO ===
@@ -12936,10 +12936,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Mr_mime
-Level: 18
+Level: 19
 IVs: 5 HP / 0 Atk / 5 Def / 0 SpA / 1 SpD / 0 Spe
 
-Scyther
+Bisturi (Scyther)
+Level: 19
+IVs: 0 HP / 5 Atk / 5 Def / 0 SpA / 0 SpD / 0 Spe
+
+PinzaTeste (Scizor)
+Level: 19
+IVs: 0 HP / 5 Atk / 5 Def / 0 SpA / 0 SpD / 0 Spe
+
+
+Lobotomia (Alakazam)
 Level: 19
 IVs: 0 HP / 5 Atk / 5 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -14148,46 +14157,30 @@ Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ROXANNE_2 ===
-Name: ROXANNE
+Name: CAMI
 Class: Leader
 Pic: Leader Roxanne
 Gender: Female
 Music: Female
-Items: Full Restore / Full Restore / Full Restore
+Items: Full Restore  
 Double Battle: Yes
 AI: Basic Trainer
 
+Sunflora
+Level: 21
+IVs: 15 HP / 20 Atk / 15 Def / 15 SpA / 12 SpD / 12 Spe
+ 
+
+Wartortle @ Sitrus Berry
+Level: 22
+IVs: 12 HP / 20 Atk / 15 Def / 10 SpA / 12 SpD / 11 Spe
+ 
+
 Golem
-Level: 32
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Protect
-- Rollout
-- Magnitude
-- Explosion
-
-Kabuto @ Sitrus Berry
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Swords Dance
-- Ice Beam
-- Surf
-- Rock Slide
-
-Onix
-Level: 35
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Iron Tail
-- Explosion
-- Roar
-- Rock Slide
-
-Nosepass @ Sitrus Berry
-Level: 37
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Double Team
-- Explosion
-- Protect
-- Rock Slide
+Level: 23
+IVs: 20 HP / 22 Atk / 15 Def / 24 SpA / 20 SpD / 21 Spe
+ 
+ 
 
 === TRAINER_ROXANNE_3 ===
 Name: ROXANNE
@@ -15207,34 +15200,30 @@ Items: Full Restore / Full Restore / Full Restore
 Double Battle: Yes
 AI: Basic Trainer / Risky
 
-Hoothoot
-Level: 25
+Ninetales
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
 
-Tropius
-Level: 25
+Rapidash
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
 
-Dragonair @ Sitrus Berry
-Level: 25
+Dragonite @ Sitrus Berry
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
 
-Pelipper
-Level: 25
+Arcanine
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
 
 Vaporeon
-Level: 25
+Level: 20
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
-
-Altaria @ Chesto Berry
-Level: 25
-IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
  
 
 === TRAINER_WINONA_4 ===
@@ -15940,17 +15929,33 @@ Level: 5
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_NOLAND ===
-Name: NOLAND
+Name: RICC
 Class: Factory Head
 Pic: Factory Head Noland
 Gender: Male
 Music: Male
+Items: Full Restore  
 Double Battle: No
 AI: Basic Trainer
 
-Beldum
-Level: 5
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Noctres (Charizard) (M) @ Sitrus Berry
+Level: 22
+IVs: 22 HP / 25 Atk / 22 Def / 27 SpA / 29 SpD / 022 Spe
+Shiny: Yes
+
+Gyarados
+Level: 22
+IVs: 22 HP / 25 Atk / 22 Def / 27 SpA / 29 SpD / 022 Spe
+Shiny: Yes
+
+Gengar
+Level: 23
+IVs: 22 HP / 25 Atk / 22 Def / 27 SpA / 29 SpD / 022 Spe
+
+Milo (Arcanine) (M)
+Level: 23
+IVs: 22 HP / 25 Atk / 22 Def / 27 SpA / 29 SpD / 022 Spe
 
 === TRAINER_LUCY ===
 Name: LUCY

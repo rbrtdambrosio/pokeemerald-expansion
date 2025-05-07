@@ -30,5 +30,6 @@
 #define HEAL_LOCATION_ViaFrancigenaUpHill_Mirtilli 26
 #define HEAL_LOCATION_LagoWild_Mirtilli 27
 #define HEAL_LOCATION_CampoGizzi_Mirtilli 28
+#define HEAL_LOCATION_AUTOSTRADA_Mirtilli 29
 
 #endif // GUARD_CONSTANTS_HEAL_LOCATIONS_H

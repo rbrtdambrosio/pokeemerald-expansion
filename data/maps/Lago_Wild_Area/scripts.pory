@@ -121,6 +121,16 @@ text after_Battle_Text_Lago_Chris{
 format("PINGUINO: Niente olio questa volta")
 }
 
+
+
+script PinguinoPokeball{
+	lockall
+	giveitem(ITEM_POKE_BALL) 
+	removeobject(9)  
+	addvar(VAR_NUM_POKEBALL,1)
+   releaseall
+}
+
 script Lago_Wild_Area_EventScript_Giada{
 	
     trainerbattle_single(TRAINER_HEIDI, Battle_Text_Lago_Giada,after_Battle_Text_Lago_Giada)
